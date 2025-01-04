@@ -1,0 +1,3156 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+	<title>Creaviva - Paul Klee Game</title>
+
+<style>
+.container{
+	width: 50%;
+	margin: auto;
+}
+
+#container_HomeScreen{
+	visibility: visible;
+}
+
+#container_Categories{
+	visibility: hidden;
+}	
+	
+#container_FindArt{
+	visibility: hidden;
+}	
+
+#container_EntryArt{
+	visibility: hidden;
+}
+
+#container_Menu_ObjectID{
+	visibility: hidden;
+}
+
+#container_Menu_NO_ID{
+	visibility: hidden;
+}
+
+#container_Menu_CheckAnswers{
+	visibility: hidden;
+}
+
+#container_YouWin{
+	visibility: hidden;
+}
+
+#gameMenu{
+	position: relative;
+	top: 0;
+	left: 0;
+	width: 50%;
+	height: 100%;
+	opacity: 0.6;
+	background: #ddd;
+}
+
+#splashscreen{
+	/*background-image: url(http://i.imgbox.com/Al4c3tZ5.png);*/
+	position: fixed;
+	top: 0px;
+	left: 50%;
+	transform: translate(-50%);
+
+	width: 600px;
+	height: 1032px;
+	opacity: 1;
+	background: #fff;
+
+	background-repeat: no-repeat;
+    z-index: 99999;
+}
+
+#backgroundArt{
+	position: fixed;
+	top: 0px;
+	left: 50%;
+	transform: translate(-50%);
+	
+/*	width: 50%; */
+	width: 600px;
+	height: 1000px;
+	opacity: 1;
+	background: #fff;
+
+}
+
+#topNavigation{
+	position: fixed;
+	top: 0px;
+	left: 50%;
+	transform: translate(-50%);
+	
+/*	width: 50%; */
+	width: 600px;
+	height: 80px;
+	opacity: 1;
+	background: #222;
+}
+
+#bottomNavigation{
+	position: fixed;
+	top: 950px;
+	left: 50%;
+	transform: translate(-50%);
+	
+/*	width: 50%; */
+	width: 600px;
+	height: 80px;
+	opacity: 1;
+	background: #bbb;
+}
+
+#topNavCatButton1{
+	position: fixed;
+ top: 5px;
+/*	left: 300px; */
+	left: 25%;
+	/*transform: translate(-50%);*/
+	opacity: 0.8;
+	visibility: hidden;
+}
+
+#topNavCatButton2{
+	position: fixed;
+	top: 5px;
+/*	left: 500px; */
+	left: 45%;
+	opacity: 0.8;
+	visibility: hidden;
+}
+
+
+#topNavCatButton3{
+	position: fixed;
+ 	top: 5px;
+	left: 65%;
+	opacity: 0.8;
+	visibility: hidden;
+}
+
+#topNavCatButton1_small{
+	position: fixed;
+ 	top: 15px;
+	left: 25%;
+	opacity: 0.8;
+	visibility: hidden;
+}
+
+#topNavCatButton2_small{
+	position: fixed;
+	top: 15px;
+	left: 45%;
+	opacity: 0.8;
+	visibility: hidden;
+}
+
+#topNavCatButton3_small{
+	position: fixed;
+ 	top: 15px;
+	left: 65%;
+	opacity: 0.8;
+	visibility: hidden;
+}
+
+#KleeReward{
+	position: fixed;
+	top: 250px;
+	left: 50%;
+	transform: translate(-50%);
+	
+	width: 450px;
+	height: 540px;
+}
+
+.KleeBits {
+  width: calc(20% - 10px);
+  height: calc(20% - 10px);
+  margin: 0px;
+  position: relative;
+  box-shadow: 1px 1px 1px rgba(0,0,0,.3);
+  /*
+  transform: scale(1);
+  transform-style: preserve-3d;
+  transition: transform .5s;
+  */
+}
+
+.SpacerGrow{
+	flex-grow: 1;
+}
+.Spacer10{
+	height: 10px;
+}
+.SpacerTop{
+	height: 1px;
+}
+
+.Title{
+	position: fixed;
+	top: 120px;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 500px;
+	font: 30px arial;
+	color: #222;
+	text-align: center;
+}
+
+.Explain{
+	position: fixed;
+	top: 170px;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 500px;
+	font: 20px arial;
+	color: #555;
+	text-align: center;
+}
+
+.Explain2{
+	position: fixed;
+	top: 220px;
+/*	left: calc (50% - 50px) */
+	left: 50%;
+	transform: translate(-50%, -50%);
+	font: 20px arial;
+	color: #555;
+	text-align: center;
+}
+
+.HomeRewardExplain{
+	position: fixed;
+	top: 830px;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 500px;
+	text-align: center;
+	
+	font: 24px arial;
+	color: #222;
+}
+
+#ExplainObjectID{
+	position: fixed;
+	top: 240px;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	font: 20px arial;
+	color: #555;
+	text-align: center;
+}
+
+#codeNew{
+	height: 30px;
+	font-size: 24px;
+	margin: 5px;
+}
+
+#writeCatName_entry{
+	position: fixed;
+	top: 170px;
+/*	left: calc (50% + 20px); */
+	left: 50%; 
+	transform: translate(-50%, -50%);
+	font: 30px arial;
+	color: #222;
+	text-align: center;
+}
+
+#writeCatName_results{
+	position: fixed;
+	top: 140px;
+/*	left: calc (50% + 20px); */
+	left: 65%; 
+	transform: translate(-50%, -50%);
+	font: 20px arial;
+	color: #555;
+	text-align: center;
+}
+
+.BigHomeArt{
+	position: fixed;
+	top: 200px;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	
+	/* height: 400px;
+	width: 343px;	*/
+	text-align: center;
+}
+
+.catBox3 {
+	left: 50%;
+	transform: translate(-50%, -50%);
+  
+	width: 230px;
+/*	height: calc(30% + 10px); */
+	height: 230px;
+  
+	margin: 5px;
+/*	position: relative; */
+	position: fixed;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.3);
+	opacity: 0.75;
+}
+
+.catBox4 {
+	width: 256px;
+	height: 256px;
+	margin: 5px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.3);
+}
+
+.testBoxes4 {
+	width: 128px;
+	height: 128px;
+	margin: 5px;
+	/* box-shadow: 1px 1px 1px rgba(0,0,0,.3); */
+}
+
+#testSlot1{
+	position: fixed;
+	left: calc(50% - 128px);
+	top: 500px;
+	opacity:0.5;
+}
+
+#testSlot2{
+	position: fixed;
+	left: calc(50% + 20px);
+	top: 500px;
+	opacity:0.5;
+}
+
+#testSlot3{
+	position: fixed;
+	left: calc(50% - 128px);
+	top: calc(500px + 128px + 20px);
+	opacity:0.5;
+}
+
+#testSlot4{
+	position: fixed;
+	left: calc(50% + 20px);
+	top: calc(500px + 128px + 20px);
+	opacity:0.5;
+}
+
+#artReturnButton,
+#artSubmit{
+	width: 256px;
+}
+
+
+/*#cat1slot{*/
+#chooseCategory1Button{
+	background: purple;
+	top: 320px;
+}
+
+/*#cat2slot{*/
+#chooseCategory2Button{
+	background: orange;
+	top: calc(320px + 230px + 10px);
+}
+
+/*#cat3slot{*/
+#chooseCategory3Button{
+	background: teal;
+	top: calc(320px + 230px + 10px + 230px + 10px);
+}
+
+#art1slotButton{
+	position: fixed;
+	left: calc(50% - 280px);
+	top: 250px;
+	/*background: green;*/
+	background: black;
+	opacity: 0.8;
+}
+
+#art2slotButton{
+	position: fixed;
+	left: calc(50% + 20px);
+	top: 250px;
+	/*background: blue;*/
+	background: black;
+	opacity: 0.8;
+}
+
+#art3slotButton{
+	position: fixed;
+	left: calc(50% - 280px);
+	top: calc(250px + 256px + 20px);
+	/*background: yellow;*/
+	background: black;
+	opacity: 0.8;
+}
+
+#art4slotButton{
+	position: fixed;
+	left: calc(50% + 20px);
+	top: calc(250px + 256px + 20px);
+	/*background: red;*/
+	background: black;
+	opacity: 0.8;
+}
+
+#checkSelectionsText{
+	position: fixed;
+	/*top: calc(180px + 256px + 20px + 256px + 40px);*/
+	top: 850px;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	font: 20px arial;
+	color: #555;
+	text-align: center;
+}
+
+/* screen 4 bottom text */
+#artReturnButton{
+	left: 50%;
+	top: 600px;
+	transform: translate(-50%, -50%);
+  
+	width: 256px;
+	height: 256px;
+  
+	margin: 5px;
+	position: fixed;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.3);
+	opacity: 0.7;
+}
+
+#codeEntryText{
+	font: 20px arial;
+	color: #555;
+}
+
+/* DIALOGUE BOXES: screen 4:ObjectIDexplain, screen 3: CheckAnswers */
+
+	#Menu_ObjectID{
+		position: fixed;
+		top: 120px;
+		left: 50%;
+		transform: translate(-50%);
+		width: 500px;
+		height: 850px;
+		opacity: 0.6;
+		background: black;
+		visibility: hidden;
+	}
+
+	#Menu_CheckAnswers{
+		position: fixed;
+		top: 120px;
+		left: 50%;
+		transform: translate(-50%);
+		width: 500px;
+		height: 700px;
+		opacity: 0.6;
+		background: black;
+		visibility: hidden;
+	}
+
+
+	#Menu_NO_ID{
+		position: fixed;
+		top: 120px;
+		left: 50%;
+		transform: translate(-50%);
+		width: 500px;
+		height: 300px;
+		opacity: 0.6;
+		background: black;
+		visibility: hidden;
+	}
+
+/* PAUSE MENU CONTENT */
+
+	#pauseMenu{
+		position: fixed;
+		top: 0;
+		left: 50%;
+		transform: translate(-50%);
+		
+		width: 600px;
+		height: 1000px;
+		opacity: 0.6;
+		background: black;
+		visibility: hidden;
+	}
+
+	#settingsForm{
+		position: fixed;
+		top: 20px;
+		left: 300px;
+	/*	top: 450px; 
+		left: 50%;
+		transform: translate(-50%); 
+	*/
+		
+		font: 30px arial;
+		color: white;
+		text-align: center; 
+		opacity: 0.8;
+		visibility: visible;
+	}
+
+	#settingsText1,
+	#creditsText1{
+		position: fixed;
+		top: 280px;
+		left: 50%;
+		transform: translate(-50%);
+		font: 30px arial;
+		color: white;
+		text-align: center;
+		opacity: 0.5;
+		visibility: hidden;
+	}
+	
+	#settingsText2{
+		position: fixed;
+		top: 500px;
+		left: 50%;
+		transform: translate(-50%);
+		font: 30px arial;
+		color: white;
+		text-align: center;
+		opacity: 0.5;
+		visibility: hidden;
+	}
+
+	#explainObjectID_text{
+		position: fixed;
+		width: 400px;
+		top: 210px;
+		left: 50%;
+		transform: translate(-50%);
+	/*	transform: translate(-50%, -50%); */
+		font: 26px arial;
+		color: white;
+		text-align: center;
+		opacity: 0.5;
+		visibility: hidden;
+	}
+	
+	#explainObjectID_pic{
+		position: fixed;
+		width: 400px;
+		top: 600px;
+		left: 50%;
+		transform: translate(-50%);
+		text-align: center;
+		/*visibility: hidden;*/
+	}	
+	
+	
+	#noAvailableArt_text{
+		position: fixed;
+		width: 400px;
+		top: 220px;
+		left: 50%;
+		transform: translate(-50%);
+	/*	transform: translate(-50%, -50%); */
+		font: 26px arial;
+		color: white;
+		text-align: center;
+		opacity: 0.5;
+		visibility: hidden;
+	}
+	
+	
+/* Dialogue Box Text */
+
+#checkAnswers_text{
+	position: fixed;
+	width: 450px;
+	top: 200px;
+	left: 50%;
+	transform: translate(-50%);
+/*	transform: translate(-50%, -50%); */
+	font: 26px arial;
+	color: white;
+	text-align: center;
+	opacity: 0.5;
+	visibility: hidden;
+}
+
+#checkAnswers_text2b,
+#checkAnswers_text2{
+	position: fixed;
+	width: 450px;
+	top: 300px;
+	left: 50%;
+	transform: translate(-50%);
+/*	transform: translate(-50%, -50%); */
+	font: 26px arial;
+	color: white;
+	text-align: center;
+	opacity: 0.5;
+	visibility: hidden;
+}
+
+/* PAUSE MENU Buttons */
+
+	/* main pause view button */
+	#pauseMenuButton {
+		/*background: #555;*/
+		width: 70px;
+		height: 70px;
+		line-height: 300px;
+		/*border: 2px solid black;*/
+	
+		position: fixed;
+		top: 42px;
+		left: 10px;
+		transform: translateY(-50%);
+		font: 30px arial;
+		color: white;
+		text-align: center;
+		opacity: 0.5;
+		visibility: visible;
+	}
+
+#bottomHomeButton{
+		width: 70px;
+		height: 70px;
+		line-height: 300px;
+	
+		position: fixed;
+		top: 42px;
+		left: 10px;
+		transform: translateY(-50%);
+		font: 30px arial;
+		color: white;
+		text-align: center;
+		opacity: 0.5;
+		visibility: visible;	
+}
+
+	/* Pause Buttons: main style display */
+	#resumeButton,
+	#settingsButton, 
+	#creditsButton,
+	#restartButton{
+		background: #555;
+		width: 300px;
+		height: 40px;
+		line-height: 300px;
+		border: 2px solid black;
+		
+		position: fixed;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		font: 30px arial;
+		color: white;
+		text-align: center;
+		vertical-align: middle;
+		opacity: 0.5;
+		visibility: hidden;
+	}
+
+	#resumeButtonX,
+	#resumeButtonX2,
+	#resumeButtonX3,
+	#goBackButton {
+		background: #555;
+		width: 100px;
+		height: 35px;
+		line-height: 300px;
+		border: 2px solid black;
+	
+		position: fixed;
+		top: 170px;
+		left: calc(50% + 100px);
+	/*	transform: translateY(-50%); */
+		font: 30px arial;
+		color: white;
+		text-align: center;
+		opacity: 0.5;
+		visibility: hidden;
+	}
+
+	/* Pause Buttons: individual positions */
+	#resumeButton {top: 20%;}
+/*	#resumeButtonX {top: 10%; left 75%;} */
+	#settingsButton {top: 40%;}
+	#creditsButton {top: 60%;}
+	#restartButton {top: 80%;}
+	#credits1 {top: 50%;}
+
+	/* Pause Buttons: hover effect */
+	#pauseMenuButton:hover,
+	#bottomHomeButton:hover,
+	#resumeButton:hover,
+	#resumeButtonX:hover,
+	#resumeButtonX2:hover,
+	#resumeButtonX3:hover,
+	#settingsButton:hover,
+	#creditsButton:hover,
+	#restartButton:hover,
+	#goBackButton:hover{
+		opacity: 1;
+		cursor: pointer;
+	}
+
+
+/* GAME SCREEN Buttons */
+
+	/* Game Buttons: main style display */
+
+	#viewCategoriesButton,
+	#checkAllArtButton,
+	#backChooseArtButton,
+	#backHomeButton,
+	#GetRewardsButton{
+		background: #555;
+		width: 400px;
+		height: 40px;
+		line-height: 300px;
+		border: 2px solid black;
+		
+		position: fixed;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		font: 30px arial;
+		color: white;
+		text-align: center;
+		vertical-align: middle; 
+		margin: auto;
+		opacity: 0.5;
+		visibility: hidden;
+	}
+
+	#ObjectIDExplainButton{
+		font: 20px arial;
+		color: blue;
+		text-decoration: underline;
+	}
+
+	/* Game Buttons: individual positions */
+
+	#viewCategoriesButton{
+		top: 900px;
+		visibility: visible;
+	}
+
+	#checkAllArtButton{
+		/*top: calc(180px + 256px + 20px + 256px + 90px); */
+		top: 900px;
+	}
+
+	#CodeEnterField{
+		top: 300px;
+		position: fixed;
+		width: 300px;
+		height: 40px;
+		
+		left: 50%;
+		transform: translate(-50%);
+		text-align: center;
+	}
+	
+	#CodeEnterButton{
+		background: #555;
+		width: 210px;
+		height: 40px;
+		line-height: 300px;
+		border: 2px solid black;
+		
+		font: 30px arial;
+		color: white;
+		text-align: center;
+		opacity: 0.5;
+	}
+
+	#backChooseArtButton{
+		top: 900px;
+	}
+
+	#backHomeButton{
+		top: 450px;
+	}
+	
+	#GetRewardsButton{
+		top: 430px;
+		height: 80px;
+	}
+
+	/* Game Buttons: hover effect */
+	#topNavCatButton1:hover,
+	#topNavCatButton2:hover,
+	#topNavCatButton3:hover,
+	#topNavCatButton1_small:hover,
+	#topNavCatButton2_small:hover,
+	#topNavCatButton3_small:hover,
+	#viewCategoriesButton:hover,
+	#chooseCategory1Button:hover,
+	#chooseCategory2Button:hover,
+	#chooseCategory3Button:hover,
+	#art1slotButton:hover,
+	#art2slotButton:hover,
+	#art3slotButton:hover,
+	#art4slotButton:hover,
+	#artReturnButton:hover,
+	#checkAllArtButton:hover,
+	#CodeEnterButton:hover,
+	#backChooseArtButton:hover,
+	#backHomeButton:hover,
+	#GetRewardsButton:hover{
+		opacity: 1;
+		cursor: pointer;
+	}
+
+
+	#ObjectIDExplainButton:hover{
+		color: green;
+		opacity: 1;
+		cursor: pointer;
+	}
+
+</style>
+
+</head>
+
+<body bgcolor=#eeeeee onLoad="gameReward()">
+
+<div id="splashscreen"><img src="imgs/Categories_Splashscreen.png"></div>
+
+<div id="backgroundArt"></div>
+
+<!-- top menu block -->
+<div id="topNavigation">
+	<!-- pause menu button -->
+	<a id="pauseMenuButton"><img src="imgs/gear.png"></a>
+
+	<!-- top nav buttons -->
+
+	<a id="topNavCatButton1"><img id="topNavCatArt1" src="imgs/category_placeholder.png" with=70 height=70></a>
+	<a id="topNavCatButton2"><img id="topNavCatArt2" src="imgs/category_placeholder.png" with=70 height=70></a>
+	<a id="topNavCatButton3"><img id="topNavCatArt3" src="imgs/category_placeholder.png" with=70 height=70></a>
+
+	<a id="topNavCatButton1_small"><img id="topNavCatArt1_small" src="imgs/category_placeholder.png" with=55 height=55></a>
+	<a id="topNavCatButton2_small"><img id="topNavCatArt2_small" src="imgs/category_placeholder.png" with=55 height=55></a>
+	<a id="topNavCatButton3_small"><img id="topNavCatArt3_small" src="imgs/category_placeholder.png" with=55 height=55></a>
+
+
+</div>
+<div id="bottomNavigation">
+<!-- pause menu button -->
+	<a id="bottomHomeButton"><img src="imgs/home.png"></a>
+    
+    <form id="settingsForm">
+        <label for="lang-switch">
+            <span lang="en">Language: </span>
+            <span lang="ge">Sprache: </span>
+        </label>
+        <select id="lang-switch"  style="font-size:24px;">
+            <option value="en">English</option>
+            <option value="ge" selected>Deutsch</option>
+        </select>
+    </form>
+    
+</div>
+
+<!-- SCREEN 1: HOME -->
+<div id="container_HomeScreen" class="container">
+	<div class="Title">
+    	<span lang="en"> Welcome to CAT-EGORIES </span>
+        <span lang="ge"> Willkommen bei CAT-EGORIES </span>
+	</div>
+    <div class="Explain">
+    	<span lang="en"> Search for matching images <br>for the given categories.</span>
+    	<span lang="ge"> Suche passende Bilder zu den <br>vorgegebenen Kategorien.</span>
+    </div>
+    <!--
+    <div class="BigHomeArt">
+    	<img src="imgs/Klee_CharacterInYellow.png" width=343 height=400 alt="Character in Yellow">
+    </div>
+    -->
+    
+    <div id="KleeReward">
+    	<img id="KleeBits01" class="KleeBits" src="imgs/KleeCat/KleeCatA_00.png" width=90 height=108>
+    	<img id="KleeBits02" class="KleeBits" src="imgs/KleeCat/KleeCatA_00.png" width=90 height=108>
+        <img id="KleeBits03" class="KleeBits" src="imgs/KleeCat/KleeCatA_00.png" width=90 height=108>
+        <img id="KleeBits04" class="KleeBits" src="imgs/KleeCat/KleeCatA_00.png" width=90 height=108>
+        <img id="KleeBits05" class="KleeBits" src="imgs/KleeCat/KleeCatA_00.png" width=90 height=108>
+        <img id="KleeBits06" class="KleeBits" src="imgs/KleeCat/KleeCatA_00.png" width=90 height=108>
+        <img id="KleeBits07" class="KleeBits" src="imgs/KleeCat/KleeCatA_00.png" width=90 height=108>
+        <img id="KleeBits08" class="KleeBits" src="imgs/KleeCat/KleeCatA_00.png" width=90 height=108>
+        <img id="KleeBits09" class="KleeBits" src="imgs/KleeCat/KleeCatA_00.png" width=90 height=108>
+        <img id="KleeBits10" class="KleeBits" src="imgs/KleeCat/KleeCatA_00.png" width=90 height=108>
+        <img id="KleeBits11" class="KleeBits" src="imgs/KleeCat/KleeCatA_00.png" width=90 height=108>
+        <img id="KleeBits12" class="KleeBits" src="imgs/KleeCat/KleeCatA_00.png" width=90 height=108>
+        <img id="KleeBits13" class="KleeBits" src="imgs/KleeCat/KleeCatA_00.png" width=90 height=108>
+        <img id="KleeBits14" class="KleeBits" src="imgs/KleeCat/KleeCatA_00.png" width=90 height=108>
+        <img id="KleeBits15" class="KleeBits" src="imgs/KleeCat/KleeCatA_00.png" width=90 height=108>
+        <img id="KleeBits16" class="KleeBits" src="imgs/KleeCat/KleeCatA_00.png" width=90 height=108>
+        <img id="KleeBits17" class="KleeBits" src="imgs/KleeCat/KleeCatA_00.png" width=90 height=108>
+        <img id="KleeBits18" class="KleeBits" src="imgs/KleeCat/KleeCatA_00.png" width=90 height=108>
+        <img id="KleeBits19" class="KleeBits" src="imgs/KleeCat/KleeCatA_00.png" width=90 height=108>
+        <img id="KleeBits20" class="KleeBits" src="imgs/KleeCat/KleeCatA_00.png" width=90 height=108>
+        <img id="KleeBits21" class="KleeBits" src="imgs/KleeCat/KleeCatA_00.png" width=90 height=108>
+        <img id="KleeBits22" class="KleeBits" src="imgs/KleeCat/KleeCatA_00.png" width=90 height=108>
+        <img id="KleeBits23" class="KleeBits" src="imgs/KleeCat/KleeCatA_00.png" width=90 height=108>
+        <img id="KleeBits24" class="KleeBits" src="imgs/KleeCat/KleeCatA_00.png" width=90 height=108>
+        <img id="KleeBits25" class="KleeBits" src="imgs/KleeCat/KleeCatA_00.png" width=90 height=108>
+    </div>
+    
+    
+    <div class="HomeRewardExplain">
+    	<span id="homeRewardExplain_en" lang="en"> Complete all three categories <br>to reveal the image! </span>
+    	<span id="homeRewardExplain_ge" lang="ge"> Füllen Sie alle drei Kategorien aus, <br>um das Bild zu enthüllen! </span>
+    </div>
+    
+    
+    <div id="viewCategoriesButton">
+    	<span lang="en"> Choose a Category </span>
+    	<span lang="ge"> Wähle eine Kategorie </span>
+    </div>
+</div>
+
+<!-- SCREEN 2: CATEGORIES-->
+<div id="container_Categories" class="container">
+    <div id="gameMenu"></div>
+    <div class="Title">
+    	<span lang="en"> CAT-EGORIES </span>
+    	<span lang="ge"> CAT-EGORIES </span>
+    </div>
+    
+    <div class="Explain">
+    	<span lang="en"> Choose one of the categories! </span>
+    	<span lang="ge"> Wähle eine der Kategorien! </span>
+    </div>
+    
+    <div id="chooseCategory1Button" class="catBox3">
+    	<img id="cat1ID" src="imgs/category_placeholder.png" width=230 height=230>
+    </div>
+    
+    <div id="chooseCategory2Button" class="catBox3">
+    	<img id="cat2ID" src="imgs/category_placeholder.png" width=230 height=230>
+    </div>
+    
+    <div id="chooseCategory3Button" class="catBox3">
+    	<img id="cat3ID" src="imgs/category_placeholder.png" width=230 height=230>
+    </div>
+    
+</div>
+
+
+<!-- SCREEN 3: ART SLOTS  -->
+<div id="container_FindArt" class="container">
+    <div id="gameMenu"></div>
+    <div class="Title">
+    	<span lang="en"> FIND ART! </span>
+    	<span lang="ge"> FINDEN SIE KUNST! </span>
+    </div>
+    
+    <div class="Explain">
+    	<span lang="en"> Search in Klee's paintings the following category: </span>
+    	<span lang="ge"> Suche in den Gemälden von Klee folgende Kategorie: </span>
+<br>
+    	<span lang="en" id="writeCatNameEn"><b> (category name here) </b></span>
+    	<span lang="ge" id="writeCatNameGe"><b> (category name here) </b></span>
+    </div>
+    
+    <div class="Explain2">
+    	<span lang="en"> Click on a frame to add your 4 paintings. </span>
+    	<span lang="ge"> Klicke jeweils in einen Rahmen <br>um deine 4 Gemälde hinzuzufügen. </span>
+    </div>
+
+	<div id="art1slotButton" class="catBox4">
+		<img id="art1ID" src="imgs/category_placeholder.png" width=256>
+	</div>
+	<div id="art2slotButton" class="catBox4">
+		<img id="art2ID" src="imgs/category_placeholder.png" width=256>
+	</div>
+	<div id="art3slotButton" class="catBox4">
+		<img id="art3ID" src="imgs/category_placeholder.png" width=256>
+	</div>
+	<div id="art4slotButton" class="catBox4">
+		<img id="art4ID" src="imgs/category_placeholder.png" width=256>
+	</div>
+
+    <div id="checkSelectionsText">
+        <span id="checkSelectEn" lang="en"> Are you ready? </span>
+        <span id="checkSelectGe" lang="ge"> Bist du soweit? </span>
+    </div>
+    <div id="checkAllArtButton">
+        <span lang="en"> Check your selections! </span>
+        <span lang="ge"> Überprüfe deine Auswahl! </span>
+    </div>
+</div>
+
+<!-- SCREEN 4: ART CODE ENTRY -->
+<div id="container_EntryArt" class="container">
+	<div class="Title">
+    	<span lang="en"> Enter the year and the Object ID <br>after it for category: </span>
+    	<span lang="ge"> Gib das Jahr und die dahinter <br>stehende Objekt-ID ein: </span>
+ 	</div>
+    
+    <div id="writeCatName_entry">
+    	<span lang="en" id="writeCatNameEn_entry"> (category name here) </span>
+    	<span lang="ge" id="writeCatNameGe_entry"> (category name here) </span>
+    </div>
+    
+    <div id="ExplainObjectID">
+    	<a id="ObjectIDExplainButton">
+    	<span lang="en"> What is an Object ID?</span>
+        <span lang="ge"> Was ist eine Objekt-ID? </span>
+        </a>
+    </div> 
+    
+<form id="CodeEnterField">
+<!--
+	<p id="codeEntryText">
+    	<span lang="en"> Enter the year and <br>the object ID after it: </span>
+    	<span lang="ge"> Geben das Jahr und <br>die dahinter stehende Objekt-ID ein: </span>
+    </p> 
+    -->
+    <input type="text" name="codeNew" id="codeNew" size=14 maxlength="11">
+    <br>
+	<button id="CodeEnterButton" onclick="TestArtInputCode()">
+    	<span lang="en"> Submit </span>
+    	<span lang="ge"> Einreichen </span>
+    </button>
+</form>
+
+	<div id="artReturnButton" class="catBox1">
+		<img id="artSubmit" src="imgs/category_placeholder.png" width=256>
+	</div>
+
+<!--
+    <div id="enterArtButton">
+    	<span lang="en"> Check your code </span>
+    	<span lang="ge"> Überprüfen Sie Ihren Code </span>
+    </div>
+ -->
+    <div id="backChooseArtButton">
+    	<span lang="en"> Back to the art frames </span>
+    	<span lang="ge"> Zurück zu den Kunstrahmen </span>
+    </div>
+</div>
+
+
+<!-- SCREEN 5: YOU WIN! -->
+<div id="container_YouWin" class="container">
+	<div class="Title">
+    	<span lang="en"> You Won! </span>
+    	<span lang="ge"> Du Hast Gewonnen! </span>
+    </div>
+    <div id="backHomeButton">
+    	<span lang="en"> MAIN MENU </span>
+    	<span lang="ge"> HAUPTMENÜ </span>
+    
+    </div>
+</div>
+
+<!-- CHECK ANSWERS EXPLAIN MENU (Linked off of screen 3): -->
+<div id="container_Menu_CheckAnswers">
+    <div id="Menu_CheckAnswers"></div>
+    <div id="resumeButtonX2"> 
+    	<span lang="en"> X </span>
+        <span lang="ge"> X </span>
+    </div>
+	<p id="checkAnswers_text">
+        <span id="checkAnswersEn" lang="en">
+        	ratio of success goes here, english
+        </span>
+        <span id="checkAnswersGe" lang="ge">
+            ratio of success goes here, german
+        </span>
+        <span lang="en" id="writeCatNameEn_results"> (category name here) </span>
+    	<span lang="ge" id="writeCatNameGe_results"> (category name here) </span>
+	</p>
+	<p id="checkAnswers_text2">
+        <span lang="en">
+            Please try again! 
+            <br>Click on a slot to swap the painting with another choice.
+        </span>
+        <span lang="ge">
+            Bitte versuche es erneut! 
+            <br>Klicken Sie auf einen Platz, um das Gemälde gegen ein anderes auszutauschen.
+        </span>
+	</p>
+	<p id="checkAnswers_text2b">
+        <span lang="en">
+            Congratulations! 
+        </span>
+        <span lang="ge">
+            Glückwunsch!
+        </span>        
+	</p>
+    <div id="GetRewardsButton">
+    	<span lang="en">
+            Claim your reward now!
+        </span>
+        <span lang="ge">
+            Fordere jetzt deine Belohnung ein!
+        </span>
+    </div>
+    
+    <div class="testBoxes4">
+    	<img id="testSlot1" src="imgs/AnswerTest_empty.png">
+        <img id="testSlot2" src="imgs/AnswerTest_empty.png">
+        <img id="testSlot3" src="imgs/AnswerTest_empty.png">
+        <img id="testSlot4" src="imgs/AnswerTest_empty.png">
+    </div>
+    
+</div>
+
+<!-- OBJECT ID EXPLAIN MENU (Linked off of screen 4): -->
+<div id="container_Menu_ObjectID">
+    <div id="Menu_ObjectID"></div>
+    <div id="resumeButtonX"> 
+    	<span lang="en"> X </span>
+        <span lang="ge"> X </span>
+    </div>
+	<p id="explainObjectID_text">
+        <span lang="en">
+        <br><br>
+        	Paul Klee added the year <br>and an object identity <br>to each of his paintings.
+        	<br><br>
+            You will find the year <br>and the object ID on the <br>sign next to the painting.
+            <br> 
+            <!--
+<br>Look for the year it was created, and the number directly to the right of the year.
+<br>
+<br> Please type this year and number into the slot to add a painting.
+            -->
+        </span>
+        <span lang="ge">
+        <br><br>
+			Paul Klee hat seinen Bildern jeweils die Jahreszahl und eine Objekt-Identität hinzugefügt.
+			<br><br>
+            Du findest die Jahreszahl <br>und die Objekt-ID auf dem <br>Schild neben dem Bild.
+            <br>
+            <!--
+<br>Suchen Sie nach dem Jahr der Erstellung und der Zahl direkt rechts neben dem Jahr.
+<br>
+<br> Bitte geben Sie dieses Jahr und diese Nummer in das Feld ein, um ein Gemälde hinzuzufügen.
+            -->
+        </span>
+	</p>
+    <div>
+    	<img id="explainObjectID_pic" src="imgs/ObjectID_example2.png">
+    </div>
+</div>
+
+
+<!-- NOT AN AVAILABLE ID MESSAGE (Linked off of screen 4): -->
+<div id="container_Menu_NO_ID">
+    <div id="Menu_NO_ID"></div>
+    <div id="resumeButtonX3"> 
+    	<span lang="en"> X </span>
+        <span lang="ge"> X </span>
+    </div>
+	<p id="noAvailableArt_text">
+        <span lang="en">
+        	This code is not available. <br>Please try again.
+        </span>
+        <span lang="ge">
+            Dieser Code ist nicht verfügbar. <br>Bitte versuche es erneut.
+        </span>
+	</p>
+</div>
+
+<!-- PAUSE MENU: -->
+<div id="container_pauseMenu">
+	<!--menu 1-->
+    <div id="pauseMenu"></div>
+    <div id="resumeButton"> 
+    	<span lang="en"> Resume </span>
+        <span lang="ge"> Wieder Aufnehmen </span>
+    </div>
+    <div id="settingsButton"> 
+    	<span lang="en"> Settings </span>
+        <span lang="ge"> Einstellungen </span>
+    </div>
+    <div id="creditsButton"> 
+    	<span lang="en"> Credits </span>
+        <span lang="ge"> Credits </span>
+    </div>
+    <div id="restartButton"> 
+    	<span lang="en"> Restart </span>
+        <span lang="ge"> Neu Starten </span>
+    </div>
+	<!--menu 2-->
+    <p id="settingsText1"> 
+    	<span lang="en">Please choose a language <br>for your game:</span> 
+        <span lang="ge">Bitte wählen Sie eine Sprache <br>für Ihr Spiel:</span>
+    </p>
+    <!--
+	<div id="setLang1Button"> English </div>
+    <div id="setLang2Button"> German </div>
+    -->
+    <!--
+    <form id="settingsForm">
+        <label for="lang-switch">
+            <span lang="en">Language: </span>
+            <span lang="ge">Sprache: </span>
+        </label>
+        <select id="lang-switch"  style="font-size:24px;">
+            <option value="en">English</option>
+            <option value="ge" selected>Deutsch</option>
+        </select>
+    </form>
+    -->
+    
+    <p id="settingsText2">
+        <span lang="en">Text in English</span>
+        <span lang="ge">Text auf Deutsch</span>
+    </p>
+    
+    
+	<!--menu 3--> 
+	<p id="creditsText1">
+    	<span lang="en">This game was made by cool people!
+        <br><br>
+            <br>
+            <br>Game Design: Kellian Pletcher
+            <br>
+            <br>Programming: Jason Wiser
+            <br>
+            <br>Visual Design: Bob Flynn
+        </span>
+    	<span lang="ge">Dieses Spiel wurde von
+        <br>coolen Leuten gemacht. 
+        <br><br>
+			<br>
+            <br>Spieldesign: Kellian Pletcher
+            <br>
+        	<br>Programmierung: Jason Wiser
+            <br>
+            <br>Visuelles Design: Bob Flynn
+        </span>
+    </p>
+    <div id="goBackButton">
+     	<span lang="en"> back </span>
+     	<span lang="ge"> zurück </span>
+     </div>
+</div>
+
+
+<script>
+setTimeout(function(){window.scrollTo(0,0);}, 500);
+
+//PAUSE MENU PART 1/3: ID VARIABLES
+	var pauseMenuButton = document.getElementById("pauseMenuButton");
+	var bottomHomeButton = document.getElementById("bottomHomeButton");
+	
+	//Pause Menu variables
+	var pauseMenu = document.getElementById("pauseMenu");
+	
+	var resumeButton = document.getElementById("resumeButton");
+	var settingsButton = document.getElementById("settingsButton");
+	var creditsButton = document.getElementById("creditsButton");
+	var restartButton = document.getElementById("restartButton");
+	
+	var settingsText1 = document.getElementById("settingsText1");
+	//var setLang1Button = document.getElementById("setLang1Button");
+	//var setLang2Button = document.getElementById("setLang2Button");
+	
+	var settingsText2 = document.getElementById("settingsText2");
+	var settingsForm = document.getElementById("settingsForm");
+
+	var creditsText1 = document.getElementById("creditsText1");
+	
+	var goBackButton = document.getElementById("goBackButton");
+	
+	var isPaused = false;
+	
+	//this listens for [esc] press to open/close pause menu-->
+	document.addEventListener('keyup',
+		function(pressEsc){
+			if(pressEsc.keyCode===27){
+				//(isPaused)? resumeGame(): pauseGame();
+				//Test scoring
+				openMenuCheckAnswers()
+				//Ternary if statement: "if game is Paused, resume. else, pause."	
+			}
+		}
+	);
+
+
+//PAUSE MENU PART 2/3: BUTTONS (turns text div IDs to buttons)
+
+	//open pause menu
+	pauseMenuButton.addEventListener('click', pauseGame);
+	
+	//pause menu buttons
+	resumeButton.addEventListener('click', resumeGame);
+	settingsButton.addEventListener('click', showSettings);
+	creditsButton.addEventListener('click', showCredits);
+	restartButton.addEventListener('click', restartGame);
+	
+	//settings buttons
+	//setLang1Button.addEventListener('click', setLanguageEnglish);
+	//setLang2Button.addEventListener('click', setLanguageGerman);
+
+	//return to pause menu
+	goBackButton.addEventListener('click', showMain);
+
+
+//PAUSE MENU PART 3/3: SCREEN SWITCH FUNCTIONS
+
+//three functions for a dialogue box
+	function openMenuObjectID(){
+		document.body.style.cursor = "crosshair";
+		container_Menu_ObjectID.style.visibility = "visible";
+		Menu_ObjectID.style.visibility = "visible";
+		resumeButtonX.style.visibility = "visible";
+		explainObjectID_text.style.visibility = "visible";
+		
+		pauseMenuButton.style.visibility = "hidden";
+		container_HomeScreen.style.opacity = 0.1;
+		container_Categories.style.opacity = 0.1;
+		container_FindArt.style.opacity = 0.1;
+		container_EntryArt.style.opacity = 0.1;
+		container_YouWin.style.opacity = 0.1;
+		topNavigation.style.opacity = 0.1;
+		bottomNavigation.style.opacity = 0.1;
+	}
+
+	function openMenu_NoID(){
+		document.body.style.cursor = "crosshair";
+		container_Menu_NO_ID.style.visibility = "visible";
+		Menu_NO_ID.style.visibility = "visible";
+		resumeButtonX3.style.visibility = "visible";
+		noAvailableArt_text.style.visibility = "visible";
+		
+		pauseMenuButton.style.visibility = "hidden";
+		container_HomeScreen.style.opacity = 0.1;
+		container_Categories.style.opacity = 0.1;
+		container_FindArt.style.opacity = 0.1;
+		container_EntryArt.style.opacity = 0.1;
+		container_YouWin.style.opacity = 0.1;
+		topNavigation.style.opacity = 0.1;
+		bottomNavigation.style.opacity = 0.1;
+	}
+
+	function openMenuCheckAnswers(){
+		document.body.style.cursor = "crosshair";
+		container_Menu_CheckAnswers.style.visibility = "visible";
+		Menu_CheckAnswers.style.visibility = "visible";
+		resumeButtonX2.style.visibility = "visible";
+		checkAnswers_text.style.visibility = "visible";
+		//GetRewardsButton.style.visibility = "visible";
+		//show text based on results in checkAllArt():
+		//checkAnswers_text2.style.visibility = "hidden";
+		//checkAnswers_text2b.style.visibility = "hidden";
+		
+		pauseMenuButton.style.visibility = "hidden";
+		container_HomeScreen.style.opacity = 0.1;
+		container_Categories.style.opacity = 0.1;
+		container_FindArt.style.opacity = 0.1;
+		container_EntryArt.style.opacity = 0.1;
+		container_YouWin.style.opacity = 0.1;
+		topNavigation.style.opacity = 0.1;
+		bottomNavigation.style.opacity = 0.1;
+	}
+
+//for all dialogue boxes:
+	function resumeGameX(){
+		document.body.style.cursor = "default";
+		container_Menu_ObjectID.style.visibility = "hidden";
+		Menu_ObjectID.style.visibility = "hidden";
+		resumeButtonX.style.visibility = "hidden";
+		resumeButtonX2.style.visibility = "hidden";
+		explainObjectID_text.style.visibility = "hidden";
+		
+		container_Menu_NO_ID.style.visibility = "hidden";
+		Menu_NO_ID.style.visibility = "hidden";
+		resumeButtonX3.style.visibility = "hidden";
+		noAvailableArt_text.style.visibility = "hidden";
+		
+		container_Menu_CheckAnswers.style.visibility = "hidden";
+		Menu_CheckAnswers.style.visibility = "hidden";
+		checkAnswers_text.style.visibility = "hidden";
+		checkAnswers_text2.style.visibility = "hidden";
+		checkAnswers_text2b.style.visibility = "hidden";
+		GetRewardsButton.style.visibility = "hidden";
+		ClearHints();
+		
+		pauseMenuButton.style.visibility = "visible";
+		container_HomeScreen.style.opacity = 1;
+		container_Categories.style.opacity = 1;
+		container_FindArt.style.opacity = 1;
+		container_EntryArt.style.opacity = 1;
+		container_YouWin.style.opacity = 1;
+		topNavigation.style.opacity = 1;
+		bottomNavigation.style.opacity = 1;
+	}
+
+	//pause menu switch display functions
+	function pauseGame(){
+		isPaused = true;
+		document.body.style.cursor = "crosshair";
+		pauseMenu.style.visibility = "visible";
+		pauseMenuButton.style.visibility = "hidden";
+		showMenuMain();
+		
+		container_HomeScreen.style.opacity = 0.1;
+		container_Categories.style.opacity = 0.1;
+		container_FindArt.style.opacity = 0.1;
+		container_EntryArt.style.opacity = 0.1;
+		container_YouWin.style.opacity = 0.1;
+		topNavigation.style.opacity = 0.1;
+		bottomNavigation.style.opacity = 0.1;
+	}
+	
+	function resumeGame(){
+		isPaused = false;
+		document.body.style.cursor = "default";
+		pauseMenu.style.visibility = "hidden";
+		pauseMenuButton.style.visibility = "visible";
+		hideMenuMain();
+		hideMenuSettings();
+		hideMenuCredits();
+		
+		container_HomeScreen.style.opacity = 1;
+		container_Categories.style.opacity = 1;
+		container_FindArt.style.opacity = 1;
+		container_EntryArt.style.opacity = 1;
+		container_YouWin.style.opacity = 1;
+		topNavigation.style.opacity = 1;
+		bottomNavigation.style.opacity = 1;
+	}
+	
+	function restartGame(){
+		resumeGame();
+		clearArtSelectField();
+		playerArtChoicesArray[0] = 0;
+		playerArtChoicesArray[1] = 0;
+		playerArtChoicesArray[2] = 0;
+		playerArtChoicesArray[3] = 0;
+		
+		container_HomeScreen.style.visibility = "visible";
+		viewCategoriesButton.style.visibility = "visible";
+		
+		container_Categories.style.visibility = "hidden";
+		chooseCategory1Button.style.visibility = "hidden";
+		chooseCategory2Button.style.visibility = "hidden";
+		chooseCategory3Button.style.visibility = "hidden";
+		
+		topNavCatButton1.style.visibility = "hidden";
+		topNavCatButton2.style.visibility = "hidden";
+		topNavCatButton3.style.visibility = "hidden";
+		topNavCatButton1_small.style.visibility = "hidden";
+		topNavCatButton2_small.style.visibility = "hidden";
+		topNavCatButton3_small.style.visibility = "hidden";
+		
+		container_FindArt.style.visibility = "hidden";
+		checkAllArtButton.style.visibility = "hidden";
+		
+		container_EntryArt.style.visibility = "hidden";
+		//enterArtButton.style.visibility = "hidden";
+		backChooseArtButton.style.visibility = "hidden";
+		
+		container_YouWin.style.visibility = "hidden";
+	
+	}
+	
+	function showMain(){
+		showMenuMain(); hideMenuSettings(); hideMenuCredits();
+	}
+	
+	function showSettings(){
+		showMenuSettings(); hideMenuMain();
+	}
+	
+	function showCredits(){
+		showMenuCredits(); hideMenuMain();
+	}
+	
+	function showMenuMain(){
+		resumeButton.style.visibility = "visible";
+		settingsButton.style.visibility = "visible";
+		creditsButton.style.visibility = "visible";
+		restartButton.style.visibility = "visible";
+	}
+	
+	function hideMenuMain(){
+		resumeButton.style.visibility = "hidden";
+		settingsButton.style.visibility = "hidden";
+		creditsButton.style.visibility = "hidden";
+		restartButton.style.visibility = "hidden";
+	}
+	
+	function showMenuSettings(){
+		settingsText1.style.visibility = "visible";
+		//setLang1Button.style.visibility = "visible";
+		//setLang2Button.style.visibility = "visible";
+		
+		settingsText2.style.visibility = "visible";
+		settingsForm.style.visibility = "visible";
+		
+		goBackButton.style.visibility = "visible";
+	}
+	
+	function hideMenuSettings(){
+		settingsText1.style.visibility = "hidden";
+		//setLang1Button.style.visibility = "hidden";
+		//setLang2Button.style.visibility = "hidden";
+		
+		settingsText2.style.visibility = "hidden";
+		//settingsForm.style.visibility = "hidden";
+		
+		goBackButton.style.visibility = "hidden";
+	}
+	
+	function showMenuCredits(){
+		creditsText1.style.visibility = "visible";
+		goBackButton.style.visibility = "visible";
+	}
+	
+	function hideMenuCredits(){
+		creditsText1.style.visibility = "hidden";
+		goBackButton.style.visibility = "hidden";
+	}
+
+
+
+//GAME SCREENS PART 1: ID VARIABLES
+
+	//Top / Bottom Navigation Color Blocks:
+	var topNavigation = document.getElementById("topNavigation");
+	var	bottomNavigation = document.getElementById("bottomNavigation");
+
+	//Screen 1: home
+	var container_HomeScreen = document.getElementById("container_HomeScreen");
+	var viewCategoriesButton = document.getElementById("viewCategoriesButton");
+
+	var KleeBits01 = document.getElementById("KleeBits01");
+	var KleeBits02 = document.getElementById("KleeBits02");
+	var KleeBits03 = document.getElementById("KleeBits03");
+	var KleeBits04 = document.getElementById("KleeBits04");
+	var KleeBits05 = document.getElementById("KleeBits05");
+	var KleeBits06 = document.getElementById("KleeBits06");
+	var KleeBits07 = document.getElementById("KleeBits07");
+	var KleeBits08 = document.getElementById("KleeBits08");
+	var KleeBits09 = document.getElementById("KleeBits09");
+	var KleeBits10 = document.getElementById("KleeBits10");
+	var KleeBits11 = document.getElementById("KleeBits11");
+	var KleeBits12 = document.getElementById("KleeBits12");
+	var KleeBits13 = document.getElementById("KleeBits13");
+	var KleeBits14 = document.getElementById("KleeBits14");
+	var KleeBits15 = document.getElementById("KleeBits15");
+	var KleeBits16 = document.getElementById("KleeBits16");
+	var KleeBits17 = document.getElementById("KleeBits17");
+	var KleeBits18 = document.getElementById("KleeBits18");
+	var KleeBits19 = document.getElementById("KleeBits19");
+	var KleeBits20 = document.getElementById("KleeBits20");
+	var KleeBits21 = document.getElementById("KleeBits21");
+	var KleeBits22 = document.getElementById("KleeBits22");
+	var KleeBits23 = document.getElementById("KleeBits23");
+	var KleeBits24 = document.getElementById("KleeBits24");
+	var KleeBits25 = document.getElementById("KleeBits25");
+
+	//Screen 2: categories
+	var container_Categories = document.getElementById("container_Categories");
+	//art
+	var cat1ID = document.getElementById("cat1ID");
+	var cat2ID = document.getElementById("cat2ID");
+	var cat3ID = document.getElementById("cat3ID");
+	
+	var topNavCatArt1 = document.getElementById("topNavCatArt1");
+	var topNavCatArt2 = document.getElementById("topNavCatArt2");
+	var topNavCatArt3 = document.getElementById("topNavCatArt3");
+	var topNavCatArt1_small = document.getElementById("topNavCatArt1_small");
+	var topNavCatArt2_small = document.getElementById("topNavCatArt2_small");
+	var topNavCatArt3_small = document.getElementById("topNavCatArt3_small");
+	
+	//buttons
+	var chooseCategory1Button = document.getElementById("chooseCategory1Button");
+	var chooseCategory2Button = document.getElementById("chooseCategory2Button");
+	var chooseCategory3Button = document.getElementById("chooseCategory3Button");
+
+	var topNavCatButton1 = document.getElementById("topNavCatButton1");
+	var topNavCatButton2 = document.getElementById("topNavCatButton2");
+	var topNavCatButton3 = document.getElementById("topNavCatButton3");
+	
+	var topNavCatButton1_small = document.getElementById("topNavCatButton1_small");
+	var topNavCatButton2_small = document.getElementById("topNavCatButton2_small");
+	var topNavCatButton3_small = document.getElementById("topNavCatButton3_small");
+
+	//Screen 3: art slots	
+	var container_FindArt = document.getElementById("container_FindArt");
+	<!-- art -->
+	var art1ID = document.getElementById("art1ID");
+	var art2ID = document.getElementById("art2ID");
+	var art3ID = document.getElementById("art3ID");
+	var art4ID = document.getElementById("art4ID");
+	<!-- buttons -->
+	var art1slotButton = document.getElementById("art1slotButton");
+	var art2slotButton = document.getElementById("art2slotButton");
+	var art3slotButton = document.getElementById("art3slotButton");
+	var art4slotButton = document.getElementById("art4slotButton");
+
+	var resumeButtonX2 = document.getElementById("resumeButtonX2");
+	var checkAllArtButton = document.getElementById("checkAllArtButton");
+	var GetRewardsButton = document.getElementById("GetRewardsButton");
+
+	//Screen 4: art entry
+	var ObjectIDExplainButton = document.getElementById("ObjectIDExplainButton");
+	var resumeButtonX = document.getElementById("resumeButtonX");
+	var explainObjectID_text = document.getElementById("explainObjectID_text");
+	
+	var resumeButtonX3 = document.getElementById("resumeButtonX3");
+	var noAvailableArt_text = document.getElementById("noAvailableArt_text");
+	
+	var container_EntryArt = document.getElementById("container_EntryArt");
+	//var enterArtButton = document.getElementById("enterArtButton");
+	var artSubmit = document.getElementById("artSubmit");
+	var artReturnButton = document.getElementById("artReturnButton");
+	var backChooseArtButton = document.getElementById("backChooseArtButton");
+
+	//Screen 5: you win
+	var container_YouWin = document.getElementById("container_YouWin");
+	var backHomeButton = document.getElementById("backHomeButton");
+
+
+//PART 2: ALL BUTTONS (turn text div IDs to buttons)
+	
+	bottomHomeButton.addEventListener('click', goToHome);
+	
+	//screen 1: start button
+	viewCategoriesButton.addEventListener('click', goToCategorySelection);
+	viewCategoriesButton.addEventListener('click', populateCategoriesByDay);
+	//viewCategoriesButton.addEventListener('click', buildCatArray);
+	//viewCategoriesButton.addEventListener('click', updateCatDisplay);
+	
+	//Screen 2: category select buttons (two functions per button)
+	chooseCategory1Button.addEventListener('click', setCategory1);
+	chooseCategory1Button.addEventListener('click', goToArtSelection);
+	chooseCategory1Button.addEventListener('click', updateArtDisplay);
+	//chooseCategory1Button.addEventListener('click', buildArtArray);
+	
+	chooseCategory2Button.addEventListener('click', setCategory2);
+	chooseCategory2Button.addEventListener('click', goToArtSelection);
+	chooseCategory2Button.addEventListener('click', updateArtDisplay);
+	//chooseCategory2Button.addEventListener('click', buildArtArray);
+	
+	chooseCategory3Button.addEventListener('click', setCategory3);
+	chooseCategory3Button.addEventListener('click', goToArtSelection);
+	chooseCategory3Button.addEventListener('click', updateArtDisplay);
+	//chooseCategory2Button.addEventListener('click', buildArtArray);
+	
+	//TOP NAV CATEGORIES - Big
+	topNavCatButton1.addEventListener('click', setCategory1);
+	topNavCatButton1.addEventListener('click', goToArtSelection);
+	topNavCatButton1.addEventListener('click', updateArtDisplay);
+	
+	topNavCatButton2.addEventListener('click', setCategory2);
+	topNavCatButton2.addEventListener('click', goToArtSelection);
+	topNavCatButton2.addEventListener('click', updateArtDisplay);
+	
+	topNavCatButton3.addEventListener('click', setCategory3);
+	topNavCatButton3.addEventListener('click', goToArtSelection);
+	topNavCatButton3.addEventListener('click', updateArtDisplay);
+	
+	//TOP NAV CATEGORIES - Small
+	topNavCatButton1_small.addEventListener('click', setCategory1);
+	topNavCatButton1_small.addEventListener('click', goToArtSelection);
+	topNavCatButton1_small.addEventListener('click', updateArtDisplay);
+	
+	topNavCatButton2_small.addEventListener('click', setCategory2);
+	topNavCatButton2_small.addEventListener('click', goToArtSelection);
+	topNavCatButton2_small.addEventListener('click', updateArtDisplay);
+	
+	topNavCatButton3_small.addEventListener('click', setCategory3);
+	topNavCatButton3_small.addEventListener('click', goToArtSelection);
+	topNavCatButton3_small.addEventListener('click', updateArtDisplay);
+
+	//Screen 3: art select buttons (two functions per button: go to entry screen and track slot)
+	art1slotButton.addEventListener('click', goToArtEntry);
+	art1slotButton.addEventListener('click', setArt1);
+	art2slotButton.addEventListener('click', goToArtEntry);
+	art2slotButton.addEventListener('click', setArt2);
+	art3slotButton.addEventListener('click', goToArtEntry);
+	art3slotButton.addEventListener('click', setArt3);
+	art4slotButton.addEventListener('click', goToArtEntry);
+	art4slotButton.addEventListener('click', setArt4);
+
+	resumeButtonX2.addEventListener('click', resumeGameX);
+	checkAllArtButton.addEventListener('click', checkAllArt);
+	checkAllArtButton.addEventListener('click', openMenuCheckAnswers);
+
+	GetRewardsButton.addEventListener('click', addGameReward);
+	GetRewardsButton.addEventListener('click', goToHome);
+	GetRewardsButton.addEventListener('click', resumeGameX);
+
+	//Screen 4: art code entry (3 functions per button)
+	//click either the image or the button to return to art selection. 
+	//update display and clear code field
+	ObjectIDExplainButton.addEventListener('click', openMenuObjectID);
+	resumeButtonX.addEventListener('click', resumeGameX);
+	
+	//no available code warning:
+	resumeButtonX3.addEventListener('click', resumeGameX);
+	
+	artReturnButton.addEventListener('click', goToArtSelection);
+	artReturnButton.addEventListener('click', updateArtDisplay);
+	artReturnButton.addEventListener('click', clearArtSelectField);
+	
+	backChooseArtButton.addEventListener('click', goToArtSelection);
+	backChooseArtButton.addEventListener('click', updateArtDisplay);
+	backChooseArtButton.addEventListener('click', clearArtSelectField);
+	
+	 
+//PART 3: GAME SCREEN SWITCH FUNCTIONS
+
+
+	function goToHome(){
+		resumeGame();
+		clearArtSelectField();
+		
+		container_HomeScreen.style.visibility = "visible";
+		viewCategoriesButton.style.visibility = "visible";
+		settingsForm.style.visibility = "visible";
+		
+		container_Categories.style.visibility = "hidden";
+		chooseCategory1Button.style.visibility = "hidden";
+		chooseCategory2Button.style.visibility = "hidden";
+		chooseCategory3Button.style.visibility = "hidden";
+		
+		topNavCatButton1.style.visibility = "hidden";
+		topNavCatButton2.style.visibility = "hidden";
+		topNavCatButton3.style.visibility = "hidden";
+		topNavCatButton1_small.style.visibility = "hidden";
+		topNavCatButton2_small.style.visibility = "hidden";
+		topNavCatButton3_small.style.visibility = "hidden";
+		
+		container_FindArt.style.visibility = "hidden";
+		checkAllArtButton.style.visibility = "hidden";
+		
+		container_EntryArt.style.visibility = "hidden";
+		//enterArtButton.style.visibility = "hidden";
+		backChooseArtButton.style.visibility = "hidden";
+		
+		container_YouWin.style.visibility = "hidden";
+	
+	}
+
+	function goToCategorySelection(){
+		//console.log('I pressed goToCategorySelection');
+		
+		container_HomeScreen.style.visibility = "hidden";
+		viewCategoriesButton.style.visibility = "hidden";
+		settingsForm.style.visibility = "hidden";
+		
+		container_Categories.style.visibility = "visible";
+		chooseCategory1Button.style.visibility = "visible";
+		chooseCategory2Button.style.visibility = "visible";
+		chooseCategory3Button.style.visibility = "visible";
+		
+		topNavCatButton1.style.visibility = "hidden";
+		topNavCatButton2.style.visibility = "hidden";
+		topNavCatButton3.style.visibility = "hidden";
+		
+		topNavCatButton1_small.style.visibility = "visible";
+		topNavCatButton2_small.style.visibility = "visible";
+		topNavCatButton3_small.style.visibility = "visible";
+		
+		container_FindArt.style.visibility = "hidden";
+		checkAllArtButton.style.visibility = "hidden";
+		
+		container_EntryArt.style.visibility = "hidden";
+		//enterArtButton.style.visibility = "hidden";
+		backChooseArtButton.style.visibility = "hidden";
+		
+		container_YouWin.style.visibility = "hidden";
+	}
+	/*
+	var cat1_allSlotsFilled = false;
+	var cat2_allSlotsFilled = false;
+	var cat3_allSlotsFilled = false;
+	*/
+
+	function goToArtSelection(){
+		container_HomeScreen.style.visibility = "hidden";
+		viewCategoriesButton.style.visibility = "hidden";
+		
+		container_Categories.style.visibility = "hidden";
+		chooseCategory1Button.style.visibility = "hidden";
+		chooseCategory2Button.style.visibility = "hidden";
+		chooseCategory3Button.style.visibility = "hidden";
+		
+		container_FindArt.style.visibility = "visible";
+		
+		console.log('right before array test for test-button visibility is performed');
+		if ((playerArtChoicesArray[0] != 0)&&
+			(playerArtChoicesArray[1] != 0)&&
+			(playerArtChoicesArray[2] != 0)&&
+			(playerArtChoicesArray[3] != 0)){
+				
+			/* un-needed	
+			if (currentCatNum === 1){cat1_allSlotsFilled = true;}
+			else if (currentCatNum === 2){ cat2_allSlotsFilled = true;}
+			else if (currentCatNum === 3){ cat3_allSlotsFilled = true;}
+			else {console.log('no current category number');}
+			*/	
+			console.log('all 4 slots of playerArtChoicesArray are full, so show test button. Category: ' 
+			+ currentCatNum + ', playerArtChoiceArray: ' + playerArtChoicesArray);	
+			checkAllArtButton.style.visibility = "visible";
+document.getElementById("checkSelectEn").textContent = 'Are you ready?';
+document.getElementById("checkSelectGe").textContent = 'Bist du soweit?'
+		} else {
+			console.log('at least 1 playerArtChoicesArray slot is not full, so do not show test button: ' + playerArtChoicesArray);
+			checkAllArtButton.style.visibility = "hidden";
+document.getElementById("checkSelectEn").textContent = 'Fill all the frames to test your answers!';
+document.getElementById("checkSelectGe").textContent = 'Befülle alle Rahmen, um deine Antworten zu testen!'
+		}
+		
+		container_EntryArt.style.visibility = "hidden";
+		//enterArtButton.style.visibility = "hidden";
+		backChooseArtButton.style.visibility = "hidden";
+		
+		container_YouWin.style.visibility = "hidden";
+	}
+	
+	function goToArtEntry(){
+		container_HomeScreen.style.visibility = "hidden";
+		viewCategoriesButton.style.visibility = "hidden";
+		
+		container_Categories.style.visibility = "hidden";
+		chooseCategory1Button.style.visibility = "hidden";
+		chooseCategory2Button.style.visibility = "hidden";
+		chooseCategory3Button.style.visibility = "hidden";
+		
+		container_FindArt.style.visibility = "hidden";
+		checkAllArtButton.style.visibility = "hidden";
+		
+		container_EntryArt.style.visibility = "visible";
+		//enterArtButton.style.visibility = "visible";
+		backChooseArtButton.style.visibility = "visible";
+		
+		container_YouWin.style.visibility = "hidden";
+	}
+
+
+	//Track artSlot we clicked: record slot number, set Art square to same color and art: 
+	var artSlotNum = 0;
+	var artSlotNumArt = 0;
+
+	function setArt1(){
+		artSlotNum = 1;
+		artSubmit.src = imageURLs[playerArtChoicesArray[0]].src;
+		/* artReturnButton.style.background = "green"; */
+		artReturnButton.style.background = "black";
+	}
+	function setArt2(){
+		artSlotNum = 2;
+		artSubmit.src = imageURLs[playerArtChoicesArray[1]].src;
+		/* artReturnButton.style.background = "blue"; */
+		artReturnButton.style.background = "black";
+	}
+	function setArt3(){
+		artSlotNum = 3;
+		artSubmit.src = imageURLs[playerArtChoicesArray[2]].src;
+		/* artReturnButton.style.background = "yellow"; */
+		artReturnButton.style.background = "black";
+	}
+	function setArt4(){
+		artSlotNum = 4;
+		artSubmit.src = imageURLs[playerArtChoicesArray[3]].src;
+		/* artReturnButton.style.background = "red"; */
+		artReturnButton.style.background = "black";
+	}
+
+
+//PART 4: CATEGPRY CHOICES (SCREEN #2)	
+	var catURLs = [];
+	
+	catURLs[0] = {
+		image01 : new Image(),
+		//src : "imgs/category1.png",
+		src : "imgs/icon1_triangles.png",
+		imageCaption : "Triangles",
+		imageCaptionGerman : "Dreiecke"
+	};
+	catURLs[1] = {
+		image02 : new Image(),
+		//src : "imgs/category2.png",
+		src : "imgs/icon2_feet.png",
+		imageCaption : "Feet",
+		imageCaptionGerman : "Füsse"
+	};
+	catURLs[2] = {
+		image03 : new Image(),
+		//src : "imgs/category3.png",
+		src : "imgs/icon3_arrows.png",
+		imageCaption : "Arrows",
+		imageCaptionGerman : "Pfeile"
+	};
+	catURLs[3] = {
+		image04 : new Image(),
+		//src : "imgs/category4.png",
+		src : "imgs/icon4_animals.png",
+		imageCaption : "Animals",
+		imageCaptionGerman : "Tiere"
+	};
+	catURLs[4] = {
+		image05 : new Image(),
+		//src : "imgs/category5.png",
+		src : "imgs/icon5_windows.png",
+		imageCaption : "Windows",
+		imageCaptionGerman : "Fenster"
+	};
+	catURLs[5] = {
+		image06 : new Image(),
+		//src : "imgs/category6.png",
+		src : "imgs/icon6_evening.png",
+		imageCaption : "Evening",
+		imageCaptionGerman : "Abend"
+	};
+	catURLs[6] = {
+		image07 : new Image(),
+		//src : "imgs/category7.png",
+		src : "imgs/icon7_warm.png",
+		imageCaption : "Warm",
+		imageCaptionGerman : "Warm"
+	};
+	catURLs[7] = {
+		image08 : new Image(),
+		//src : "imgs/category8.png",
+		src : "imgs/icon8_sun.png",
+		imageCaption : "Sun",
+		imageCaptionGerman : "Sonne"
+	};
+	catURLs[8] = {
+		image09 : new Image(),
+		//src : "imgs/category9.png",
+		src : "imgs/icon9_bluespots.png",
+		imageCaption : "Blue Spots",
+		imageCaptionGerman : "Blauer Tupf"
+	};
+	
+	//build the array of 3 catergories based on the day of the week:
+	const currentCatArray = []; // need to populate with current choice
+	const CategoryArray1 = [0, 1, 2];
+	const CategoryArray2 = [3, 4, 5];
+	const CategoryArray3 = [6, 7, 8];
+	
+	//get day of the week and populate category
+	var today = new Date().getDay() // 0 (Sunday), 6 (Saturday)
+	console.log('today is: ' + today + ' (0 = sunday, 6 = saturday)');
+	
+	function populateCategoriesByDay(){
+		var categoryNum = 0;
+		
+		if (today === 0) {categoryNum = 1;}
+		else if (today === 1) {categoryNum = 1;}
+		else if (today === 4) {categoryNum = 1;}
+		else if (today === 2){categoryNum = 2;}
+		else if (today === 5){categoryNum = 2;}
+		else if (today === 3) {categoryNum = 3;}
+		else {categoryNum = 3;} // if (today === 6) 
+	
+		for (catX = 0; catX < 4; catX++){
+			if (categoryNum===1){currentCatArray[catX] = CategoryArray1[catX];}
+			if (categoryNum===2){currentCatArray[catX] = CategoryArray2[catX];}
+			if (categoryNum===3){currentCatArray[catX] = CategoryArray3[catX];}
+		}
+		console.log('built this category array: ' + currentCatArray);
+		updateCatDisplay();
+	}
+
+	//Set Category images to correct categories for the day of the week:
+	function updateCatDisplay(){
+		//cat1ID.src = catURLs[playerCatChoicesArray[0]].src; //old randomized
+		cat1ID.src = catURLs[currentCatArray[0]].src;
+		cat2ID.src = catURLs[currentCatArray[1]].src;
+		cat3ID.src = catURLs[currentCatArray[2]].src;
+		
+		topNavCatArt1.src = catURLs[currentCatArray[0]].src;
+		topNavCatArt2.src = catURLs[currentCatArray[1]].src;
+		topNavCatArt3.src = catURLs[currentCatArray[2]].src;
+		
+		topNavCatArt1_small.src = catURLs[currentCatArray[0]].src;
+		topNavCatArt2_small.src = catURLs[currentCatArray[1]].src;
+		topNavCatArt3_small.src = catURLs[currentCatArray[2]].src;
+	}
+
+	var currentCatName = 'needs input';
+	var currentCatNameGerman = 'needs input in german';
+	var currentCatNum = 0;
+	
+	//create the 3 arrays that playerArtChoicesArray feeds into
+	var playerArtChoices_cat1 = [0,0,0,0];
+	var playerArtChoices_cat2 = [0,0,0,0];
+	var playerArtChoices_cat3 = [0,0,0,0];
+
+	function setCategory1(){
+	// capture image tag name for category, display it in screen 3:
+		currentCatName = catURLs[currentCatArray[0]].imageCaption;
+		currentCatNameGerman = catURLs[currentCatArray[0]].imageCaptionGerman;
+
+		document.getElementById("writeCatNameEn").textContent = '"' + currentCatName + '"' ;
+		document.getElementById("writeCatNameGe").textContent = '"' + currentCatNameGerman + '"' ;
+		document.getElementById("writeCatNameEn_entry").textContent = '"' + currentCatName + '"' ;
+		document.getElementById("writeCatNameGe_entry").textContent = '"' + currentCatNameGerman + '"' ;
+		document.getElementById("writeCatNameEn_results").textContent = '"' + currentCatName + '"' ;
+		document.getElementById("writeCatNameGe_results").textContent = '"' + currentCatNameGerman + '"' ;
+		populateCurrentAnswersArray(currentCatArray[0]);
+		console.log('current category name: ' + currentCatName 
+			+ '. Correct answers: ' + currentCatAnswers);
+			
+		topNavCatButton1.style.visibility = "visible";
+		topNavCatButton2.style.visibility = "hidden";
+		topNavCatButton3.style.visibility = "hidden";
+		topNavCatButton1_small.style.visibility = "hidden";
+		topNavCatButton2_small.style.visibility = "visible";
+		topNavCatButton3_small.style.visibility = "visible";
+		
+		uploadPlayerArtChoices();
+		for (sc1 = 0; sc1 < 4; sc1++){
+			playerArtChoicesArray[sc1] = playerArtChoices_cat1[sc1];
+		}
+		updateArtDisplay();	
+		currentCatNum = 1;
+		console.log('Switched to Category: ' + currentCatNum);
+		clearArtSelectField();
+	}
+	function setCategory2(){
+	// capture image tag name for category, display it in screen 3:
+		currentCatName = catURLs[currentCatArray[1]].imageCaption;
+		currentCatNameGerman = catURLs[currentCatArray[1]].imageCaptionGerman;
+		
+		document.getElementById("writeCatNameEn").textContent = '"' + currentCatName + '"' ;
+		document.getElementById("writeCatNameGe").textContent = '"' + currentCatNameGerman + '"' ;
+		document.getElementById("writeCatNameEn_entry").textContent = '"' + currentCatName + '"' ;
+		document.getElementById("writeCatNameGe_entry").textContent = '"' + currentCatNameGerman + '"' ;
+		document.getElementById("writeCatNameEn_results").textContent = '"' + currentCatName + '"' ;
+		document.getElementById("writeCatNameGe_results").textContent = '"' + currentCatNameGerman + '"' ;
+		populateCurrentAnswersArray(currentCatArray[1]);
+		console.log('current category name: ' + currentCatName  
+			+ '. Correct answers: ' + currentCatAnswers);
+			
+		topNavCatButton1.style.visibility = "hidden";
+		topNavCatButton2.style.visibility = "visible";
+		topNavCatButton3.style.visibility = "hidden";
+		topNavCatButton1_small.style.visibility = "visible";
+		topNavCatButton2_small.style.visibility = "hidden";
+		topNavCatButton3_small.style.visibility = "visible";
+		
+		uploadPlayerArtChoices();
+		for (sc2 = 0; sc2 < 4; sc2++){
+			playerArtChoicesArray[sc2] = playerArtChoices_cat2[sc2];
+		}
+		updateArtDisplay();	
+		currentCatNum = 2;
+		console.log('Switched to Category: ' + currentCatNum);
+		clearArtSelectField();
+	}
+	function setCategory3(){
+	// capture image tag name for category, display it in screen 3:
+		currentCatName = catURLs[currentCatArray[2]].imageCaption;
+		currentCatNameGerman = catURLs[currentCatArray[2]].imageCaptionGerman;
+		
+		//document.getElementByID("writeCatName").innerHTML = currentCatName;
+		document.getElementById("writeCatNameEn").textContent = '"' + currentCatName + '"' ;
+		document.getElementById("writeCatNameGe").textContent = '"' + currentCatNameGerman + '"' ;
+		document.getElementById("writeCatNameEn_entry").textContent = '"' + currentCatName + '"' ;
+		document.getElementById("writeCatNameGe_entry").textContent = '"' + currentCatNameGerman + '"' ;
+		document.getElementById("writeCatNameEn_results").textContent = '"' + currentCatName + '"' ;
+		document.getElementById("writeCatNameGe_results").textContent = '"' + currentCatNameGerman + '"' ;
+		populateCurrentAnswersArray(currentCatArray[2]);
+		console.log('current category name: ' + currentCatName  
+			+ '. Correct answers: ' + currentCatAnswers);
+		topNavCatButton1.style.visibility = "hidden";
+		topNavCatButton2.style.visibility = "hidden";
+		topNavCatButton3.style.visibility = "visible";
+		topNavCatButton1_small.style.visibility = "visible";
+		topNavCatButton2_small.style.visibility = "visible";
+		topNavCatButton3_small.style.visibility = "hidden";
+		
+		uploadPlayerArtChoices();
+		for (sc3 = 0; sc3 < 4; sc3++){
+			playerArtChoicesArray[sc3] = playerArtChoices_cat3[sc3];
+		}
+		updateArtDisplay();	
+		currentCatNum = 3;
+		console.log('Switched to Category: ' + currentCatNum);
+		clearArtSelectField();
+	}
+	
+	//load the player choices into the category array
+	function uploadPlayerArtChoices(){
+		if (currentCatNum === 1){
+			for (loadX = 0; loadX < 4; loadX++){
+				playerArtChoices_cat1[loadX] = playerArtChoicesArray[loadX];
+			}
+			console.log('Category #1 Player choices stored: ' + playerArtChoices_cat1);
+		}
+		else if (currentCatNum === 2){
+			for (loadY = 0; loadY < 4; loadY++){
+				playerArtChoices_cat2[loadY] = playerArtChoicesArray[loadY];
+			}
+			console.log('Category #2 Player choices stored: ' + playerArtChoices_cat2);
+		}
+		else if (currentCatNum === 3){
+			for (loadZ = 0; loadZ < 4; loadZ++){
+				playerArtChoices_cat3[loadZ] = playerArtChoicesArray[loadZ];
+			}
+			console.log('Category #3 Player choices stored: ' + playerArtChoices_cat3);
+		}
+	}
+
+
+	//Correct Category Answers: 
+	const currentCatAnswers = [];
+
+	const cat1RightArtArray = [1,2,3,4,5,6,7,8,9,10,11,12,13,15,16]; // Triangles, 14
+	const cat2RightArtArray = [15,17,18,19,20,21,22,23,24,25,26,27,28,29]; // Feet
+	const cat3RightArtArray = [3,7,10,24,31,32,33]; // Arrows
+	const cat4RightArtArray = [27,29,33,40,49,50,51]; //Animals 52
+	const cat5RightArtArray = [2,7,10,15,34,36,37,38]; // Windows
+	const cat6RightArtArray = [3,4,5,11,34,36,37,40,41,43]; // Evening 39
+	const cat7RightArtArray = [17,31,37,38,44,45,46]; // Warm
+	const cat8RightArtArray = [10,11,33,41]; // Sun 47
+	const cat9RightArtArray = [26,30,36,37,42,48]; //	Blue Spots
+	
+//	const cat10RightArtArray = [16,27,33]; // Letters 34,35
+
+	function populateCurrentAnswersArray(CatNumArray){
+		if (CatNumArray===0){
+			for (catAns = 0; catAns < cat1RightArtArray.length; catAns++){
+				currentCatAnswers[catAns] = cat1RightArtArray[catAns];
+			}	
+		}
+		else if (CatNumArray===1){
+			for (catAns = 0; catAns < cat2RightArtArray.length; catAns++){
+				currentCatAnswers[catAns] = cat2RightArtArray[catAns];
+			}	
+		}
+		else if (CatNumArray===2){
+			for (catAns = 0; catAns < cat3RightArtArray.length; catAns++){
+				currentCatAnswers[catAns] = cat3RightArtArray[catAns];
+			}	
+		}
+		else if (CatNumArray===3){
+			for (catAns = 0; catAns < cat4RightArtArray.length; catAns++){
+				currentCatAnswers[catAns] = cat4RightArtArray[catAns];
+			}	
+		}
+		else if (CatNumArray===4){
+			for (catAns = 0; catAns < cat5RightArtArray.length; catAns++){
+				currentCatAnswers[catAns] = cat5RightArtArray[catAns];
+			}	
+		}
+		else if (CatNumArray===5){
+			for (catAns = 0; catAns < cat6RightArtArray.length; catAns++){
+				currentCatAnswers[catAns] = cat6RightArtArray[catAns];
+			}	
+		}
+		else if (CatNumArray===6){
+			for (catAns = 0; catAns < cat7RightArtArray.length; catAns++){
+				currentCatAnswers[catAns] = cat7RightArtArray[catAns];
+			}	
+		}
+		else if (CatNumArray===7){
+			for (catAns = 0; catAns < cat8RightArtArray.length; catAns++){
+				currentCatAnswers[catAns] = cat8RightArtArray[catAns];
+			}	
+		}
+		else if (CatNumArray===8){
+			for (catAns = 0; catAns < cat9RightArtArray.length; catAns++){
+				currentCatAnswers[catAns] = cat9RightArtArray[catAns];
+			}	
+		}
+	}
+
+//RANDOM CATEGORY DISPLAY to returns array of cat images (no longer used)
+/*
+	const playerCatChoicesArray = [];
+	var catChoicesLimit = 3;
+	var itemCat = 0;
+	
+	//this gets random #s and returns the array of art images
+	function buildCatArray(){
+		for (itemCat = 0; itemCat < catChoicesLimit; itemCat++){
+			var randomCatNum = Math.floor(Math.random() * catURLs.length);
+			while (checkForDupCat(randomCatNum)){
+				randomCatNum = Math.floor(Math.random() * catURLs.length);
+			}
+			playerCatChoicesArray[itemCat]=randomCatNum;
+		}
+		console.log('current cat choice array: ' + playerCatChoicesArray);
+		updateCatDisplay();
+	}
+
+	//called by buildCatArray, this checks for duplicates
+	function checkForDupCat(newNumC){
+		//test against previous values
+		if (playerCatChoicesArray[0] !== null){
+			for (c = itemCat; c > 0; c--){
+				if (newNumC === playerCatChoicesArray[c-1]){ return true;}
+				else {
+					console.log('checked item # ' + (c-1) + ', ' 
+					+ playerCatChoicesArray[c-1] + ' != ' + newNumC);
+				}
+			}
+		} else {return false;}
+	}
+*/
+
+
+//PART 5: ART SLOT CHOICES (SCREEN #3)	
+	var imageURLs = [];
+	
+	imageURLs[0] = {
+		image01 : new Image(),
+		src : "imgs/category_placeholder.png",
+		year: "",
+		objectID: "",
+		imageCaption : "placeholder"
+	};
+	
+	imageURLs[1] = {
+		image01 : new Image(),
+		src : "imgs/Triangles/233.jpg",
+		year: "1940",
+		objectID: "233",
+		imageCaption : "1940 233"
+	};
+	imageURLs[2] = {
+		image02 : new Image(),
+		src : "imgs/Triangles/289.jpg",
+		year: "1940",
+		objectID: "288",
+		imageCaption : "1940 288"
+	};
+	imageURLs[3] = {
+		image03 : new Image(),
+		src : "imgs/Triangles/2189.jpg",
+		year: "1927",
+		objectID: "140.1",
+		imageCaption : "1927 140.1"
+	};
+	imageURLs[4] = {
+		image04 : new Image(),
+		src : "imgs/Triangles/2728.jpg",
+		year: "1923",
+		objectID: "79",
+		imageCaption : "1923 79"
+	};
+	imageURLs[5] = {
+		image05 : new Image(),
+		src : "imgs/Triangles/3388.jpg",
+		year: "1930",
+		objectID: "138",
+		imageCaption : "1930 138"
+	};
+	imageURLs[6] = {
+		image06 : new Image(),
+		src : "imgs/Triangles/4054.jpg",
+		year: "1914",
+		objectID: "173",
+		imageCaption : "1914 173"
+	};
+	imageURLs[7] = {
+		image07 : new Image(),
+		src : "imgs/Triangles/5158.jpg",
+		year: "1921",
+		objectID: "24",
+		imageCaption : "1921 24"
+	};
+	imageURLs[8] = {
+		image08 : new Image(),
+		src : "imgs/Triangles/7801.jpg",
+		year: "1917",
+		objectID: "50",
+		imageCaption : "1917 50"
+	};	
+	imageURLs[9] = {
+		image09 : new Image(),
+		src : "imgs/Triangles/7826.jpg",
+		year: "1919",
+		objectID: "155",
+		imageCaption : "1919 155"
+	};
+	imageURLs[10] = {
+		image10 : new Image(),
+		src : "imgs/Triangles/7832.jpg",
+		year: "1919",
+		objectID: "247",
+		imageCaption : "1919 247"
+	};	
+	imageURLs[11] = {
+		image11 : new Image(),
+		src : "imgs/Triangles/8207.jpg",
+		year: "1933",
+		objectID: "306",
+		imageCaption : "1933 306"
+	};
+	imageURLs[12] = {
+		image12 : new Image(),
+		src : "imgs/Triangles/8305.jpg",
+		year: "1936",
+		objectID: "4",
+		imageCaption : "1936 4"
+	};
+	imageURLs[13] = {
+		image13 : new Image(),
+		src : "imgs/Triangles/9312.jpg",
+		year: "1919",
+		objectID: "191",
+		imageCaption : "1919 191"
+	};
+	imageURLs[14] = {
+		image14 : new Image(),
+		src : "imgs/Triangles/9585.jpg",
+		year: "1938",
+		objectID: "?",
+		imageCaption : "1938 ?"
+	};
+	imageURLs[15] = {
+		image15 : new Image(),
+		src : "imgs/Triangles/18790.jpg",
+		year: "1915",
+		objectID: "1",
+		imageCaption : "1915 1"
+	};
+	imageURLs[16] = {
+		image16 : new Image(),
+		src : "imgs/Triangles/55835_W.jpg",
+		year: "1918",
+		objectID: "17",
+		imageCaption : "1918 17"
+	};
+	imageURLs[17] = {
+		image17 : new Image(),
+		src : "imgs/Feet/739.jpg",
+		year: "1938",
+		objectID: "29",
+		imageCaption : "1938 29"
+	};
+	imageURLs[18] = {
+		image18 : new Image(),
+		src : "imgs/Feet/1006.jpg",
+		year: "1935",
+		objectID: "143",
+		imageCaption : "1935 143"
+	};	
+	imageURLs[19] = {
+		image19 : new Image(),
+		src : "imgs/Feet/1294.jpg",
+		year: "1938",
+		objectID: "61",
+		imageCaption : "1938 61"
+	};
+	imageURLs[20] = {
+		image20 : new Image(),
+		src : "imgs/Feet/2825.jpg",
+		year: "1939",
+		objectID: "502",
+		imageCaption : "1939 502"
+	};
+	imageURLs[21] = {
+		image21 : new Image(),
+		src : "imgs/Feet/4051.jpg",
+		year: "1914",
+		objectID: "167",
+		imageCaption : "1914 167"
+	};	
+	imageURLs[22] = {
+		image22 : new Image(),
+		src : "imgs/Feet/7207.jpg",
+		year: "1933",
+		objectID: "43",
+		imageCaption : "1933 43"
+	};	
+	imageURLs[23] = {
+		image23 : new Image(),
+		src : "imgs/Feet/7237.jpg",
+		year: "1933",
+		objectID: "85",
+		imageCaption : "1933 85"
+	};	
+	imageURLs[24] = {
+		image24 : new Image(),
+		src : "imgs/Feet/7262.jpg",
+		year: "1933",
+		objectID: "115",
+		imageCaption : "1933 115"
+	};	
+	imageURLs[25] = {
+		image25 : new Image(),
+		src : "imgs/Feet/8644.jpg",
+		year: "1939",
+		objectID: "769",
+		imageCaption : "1939 769"
+	};	
+	imageURLs[26] = {
+		image26 : new Image(),
+		src : "imgs/Feet/8654.jpg",
+		year: "1939",
+		objectID: "797",
+		imageCaption : "1939 797"
+	};	
+	imageURLs[27] = {
+		image27 : new Image(),
+		src : "imgs/Feet/19868.jpg",
+		year: "1903",
+		objectID: "2",
+		imageCaption : "1903 2"
+	};	
+	imageURLs[28] = {
+		image28 : new Image(),
+		src : "imgs/Feet/21218.jpg",
+		year: "1904",
+		objectID: "11",
+		imageCaption : "1904 11"
+	};	
+	imageURLs[29] = {
+		image29 : new Image(),
+		src : "imgs/Feet/67884.jpg",
+		year: "1902",
+		objectID: "1",
+		imageCaption : "1902 1"
+	};	
+	imageURLs[30] = {
+		image30 : new Image(),
+		src : "imgs/BlueSpots/7751.jpg",
+		year: "1913",
+		objectID: "198",
+		imageCaption : "1913 198"
+	};
+	imageURLs[31] = {
+		image31 : new Image(),
+		src : "imgs/Arrows/7829.jpg",
+		year: "1919",
+		objectID: "170",
+		imageCaption : "1919 170"
+	};	
+	imageURLs[32] = {
+		image32 : new Image(),
+		src : "imgs/Arrows/8312.jpg",
+		year: "1937",
+		objectID: "45",
+		imageCaption : "1937 45"
+	};	
+	imageURLs[33] = {
+		image33 : new Image(),
+		src : "imgs/Arrows/8800.jpg",
+		year: "1933",
+		objectID: "61",
+		imageCaption : "1933 61"
+	};	
+	imageURLs[34] = {
+		image34 : new Image(),
+		src : "imgs/Letters/9443.jpg",
+		year: "1896",
+		objectID: "?",
+		imageCaption : "1896 ?"
+	};	
+	imageURLs[35] = {
+		image35 : new Image(),
+		src : "imgs/Letters/9558.jpg",
+		year: "1902",
+		objectID: "?",
+		imageCaption : "1902 ?"
+	};	
+	imageURLs[36] = {
+		image36 : new Image(),
+		src : "imgs/Windows/7745.jpg",
+		year: "1913",
+		objectID: "44",
+		imageCaption : "1913 44"
+	};	
+	imageURLs[37] = {
+		image37 : new Image(),
+		src : "imgs/Windows/8118.jpg",
+		year: "1932",
+		objectID: "184",
+		imageCaption : "1932 184"
+	};	
+	imageURLs[38] = {
+		image38 : new Image(),
+		src : "imgs/Windows/14587.jpg",
+		year: "1927",
+		objectID: "223",
+		imageCaption : "1927 223"
+	};	
+	imageURLs[39] = {
+		image39 : new Image(),
+		src : "imgs/Evening/2658.jpg",
+		year: "1900",
+		objectID: "?",
+		imageCaption : "1900 ?"
+	};	
+	imageURLs[40] = {
+		image40 : new Image(),
+		src : "imgs/Evening/4083.jpg",
+		year: "1914",
+		objectID: "216",
+		imageCaption : "1914 216"
+	};
+	imageURLs[41] = {
+		image41 : new Image(),
+		src : "imgs/Evening/6786.jpg",
+		year: "1929",
+		objectID: "267",
+		imageCaption : "1929 267"
+	};
+	imageURLs[42] = {
+		image42 : new Image(),
+		src : "imgs/BlueSpots/7771.jpg",
+		year: "1915",
+		objectID: "56",
+		imageCaption : "1915 56"
+	};
+	imageURLs[43] = {
+		image43 : new Image(),
+		src : "imgs/Evening/7887.jpg",
+		year: "1923",
+		objectID: "90",
+		imageCaption : "1923 90"
+	};	
+	imageURLs[44] = {
+		image44 : new Image(),
+		src : "imgs/Warm/4234.jpg",
+		year: "1915",
+		objectID: "213",
+		imageCaption : "1915 213"
+	};	
+	imageURLs[45] = {
+		image45 : new Image(),
+		src : "imgs/Warm/8228.jpg",
+		year: "1933",
+		objectID: "424",
+		imageCaption : "1933 424"
+	};	
+	imageURLs[46] = {
+		image46 : new Image(),
+		src : "imgs/Warm/8509.jpg",
+		year: "1939",
+		objectID: "274",
+		imageCaption : "1939 274"
+	};	
+	imageURLs[47] = {
+		image47 : new Image(),
+		src : "imgs/Sun/9229.jpg",
+		year: "1896",
+		objectID: "?",
+		imageCaption : "1896 ?"
+	};	
+	imageURLs[48] = {
+		image48 : new Image(),
+		src : "imgs/BlueSpots/4079.jpg",
+		year: "1914",
+		objectID: "211",
+		imageCaption : "1914 211"
+	};		
+	imageURLs[49] = {
+		image50 : new Image(),
+		src : "imgs/Animals/319.jpg",
+		year: "1940",
+		objectID: "317",
+		imageCaption : "1940 317"
+	};	
+	imageURLs[50] = {
+		image51 : new Image(),
+		src : "imgs/Animals/4628.jpg",
+		year: "1907",
+		objectID: "17",
+		imageCaption : "1907 17"
+	};	
+	imageURLs[51] = {
+		image52 : new Image(),
+		src : "imgs/Animals/8732.jpg",
+		year: "1939",
+		objectID: "1132",
+		imageCaption : "1939 1132"
+	};	
+	imageURLs[52] = {
+		image53 : new Image(),
+		src : "imgs/Animals/9261.jpg",
+		year: "1894",
+		objectID: "?",
+		imageCaption : "1894 ?"
+	};	
+	
+	//build the array of 4 current art choices for this catergory
+	var playerArtChoicesArray = [0,0,0,0];	
+	
+	//This displays the Art Slot images based on the playerArtChoicesArray
+	function updateArtDisplay(){
+		art1ID.src = imageURLs[playerArtChoicesArray[0]].src;
+		art2ID.src = imageURLs[playerArtChoicesArray[1]].src;
+		art3ID.src = imageURLs[playerArtChoicesArray[2]].src;
+		art4ID.src = imageURLs[playerArtChoicesArray[3]].src;
+	}
+	
+	//RANDOM ART GENERATOR: gets random #s, returns array of art images (no longer used)
+	/*
+	var artChoicesLimit = 4;
+	var item = 0;
+	function buildArtArray(){
+		for (item = 0; item < artChoicesLimit; item++){
+			var randomNum = Math.floor(Math.random() * imageURLs.length);
+			while (checkForDupArt(randomNum)){
+				randomNum = Math.floor(Math.random() * imageURLs.length);
+			}
+			playerArtChoicesArray[item]=randomNum;
+		}
+		console.log('current art choice array: ' + playerArtChoicesArray);
+		updateArtDisplay();
+	}
+	*/
+	//called by buildArtArray, this checks random choices for duplicates (no longer used)
+	/*
+	function checkForDupArt(newNumA){
+		//test against previous values
+		if (playerArtChoicesArray[0] !== null){
+			for (a = item; a > 0; a--){
+				if (newNumA === playerArtChoicesArray[a-1]){ return true;}
+				else {
+					console.log('checked item # ' + (a-1) + ', ' 
+					+ playerArtChoicesArray[a-1] + ' != ' + newNumA);
+				}
+			}
+		} else {return false;}
+	}	
+	*/
+
+
+// PART 6: IMAGE CODE PROCESSING
+	// take field input, check for match, return image or error message
+	// codeNew is the field entry box
+
+	var codeExists = false;
+	var newChosenArt = 0;
+	var checkArtNum = 0;
+
+	function TestArtInputCode() {
+		//capture the input value code
+		var codeNew = document.getElementById('codeNew').value;
+		
+		//go through the art array to see if any of their captions match the code
+		for (checkArtNum = 0; checkArtNum < imageURLs.length; checkArtNum++){
+			if (imageURLs[checkArtNum].imageCaption===codeNew){
+				newChosenArt = checkArtNum;
+				codeExists = true;
+				console.log('found match at ' + imageURLs[checkArtNum].src + '. ' +
+				imageURLs[checkArtNum].imageCaption + ' = ' + codeNew);
+				break;
+			} else {
+				//console.log('no match at ' + imageURLs[checkArtNum] + '. ' +
+				//imageURLs[checkArtNum].imageCaption + ' != ' + codeNew);	
+			}
+		}
+		/*
+		if (codeNew.length !== 5){
+			alert('Please enter a 5-digit code.');
+		} else */
+		//if the code is a match, add to chosen art array and display
+		if (codeExists){	
+			playerArtChoicesArray[artSlotNum-1] = newChosenArt;
+			artSubmit.src = imageURLs[playerArtChoicesArray[artSlotNum-1]].src;
+			console.log('added ' + imageURLs[checkArtNum].src + ' to slot # ' + artSlotNum);
+			codeExists = false;
+		} else {
+			//third dialogue box:
+			openMenu_NoID();
+			//alert('This code is not available. Please try again.');
+		}
+	}
+	
+	// Prevent the default form submission reload behavior
+	const form = document.getElementById('CodeEnterField');
+	form.addEventListener('submit', function(event) {
+		event.preventDefault();
+	// Your custom code here, e.g., form validation or AJAX request
+	});
+	
+	//reset the input field and art display when we leave the entry screen:
+	function clearArtSelectField() {
+        document.getElementById('codeNew').value = "";
+		artSubmit.src = imageURLs[0].src;
+		codeExists = false;
+		newChosenArt = 0;
+    }
+
+//finally, check to see if the art selections are correct!:
+		//take the current category array
+		//take the current player choices array
+		//compare a choice to each item in the category array.
+		//if a guess is correct, and not already in the correctGuessesArray:
+			//correctGuesses++ and copy the item in the correctGuessesArray
+		//else continue to the next choice comparison
+		//when all choices have been checked, display the result: 
+		// if correctGuesses < 4, "You got x/4 correct. Which will you replace?"
+		// if correctGuesses = 4, go to you win "" you are a Klee Master!
+		
+	const correctGuessesArray = [0,0,0,0];	
+	
+	function checkAllArt(){
+		var currentGuess = 0;
+		var correctGuesses = 0;
+		
+		//fill all hints with Xs:
+		testSlot1.src="imgs/AnswerTest_no.png";
+		testSlot2.src="imgs/AnswerTest_no.png";
+		testSlot3.src="imgs/AnswerTest_no.png";
+		testSlot4.src="imgs/AnswerTest_no.png";
+		
+		//Loop#1 goes through all items in the player choice array
+		for (checkX = 0; checkX < 4; checkX++){
+			currentGuess = playerArtChoicesArray[checkX];
+			console.log('checking: ' + playerArtChoicesArray[checkX]);
+			//Loop#2 compares with all items in the current category array
+			for (checkY = 0; checkY < currentCatAnswers.length; checkY++){
+				if (currentGuess === currentCatAnswers[checkY]){
+					console.log('correct: ' + currentGuess + ' = ' 
+						+ currentCatAnswers[checkY]);
+					//test for duplicate correct answers:
+					if (NotAlreadyCorrectlyGuessed(currentGuess)){
+						correctGuessesArray[correctGuesses]=currentGuess;
+						correctGuesses++;
+						//populate correct hint:
+						if (checkX == 0){
+							testSlot1.src="imgs/AnswerTest_yes.png";
+							console.log('hintSlot #1 = check! checkX = ' + checkX);
+							}
+						else if (checkX == 1){
+							testSlot2.src="imgs/AnswerTest_yes.png";
+							console.log('hintSlot #2 = check! checkX = ' + checkX);
+							}
+						else if (checkX == 2){
+							testSlot3.src="imgs/AnswerTest_yes.png";
+							console.log('hintSlot #3 = check! checkX = ' + checkX);
+							}
+						else if (checkX == 3){
+							testSlot4.src="imgs/AnswerTest_yes.png";
+							console.log('hintSlot #4 = check! checkX = ' + checkX);
+							}
+						else {console.log('hmmm... weird out of range error here. checkX = '
+									+ checkX);}
+					}
+					//break;
+					else {console.log('guess is a dupliacate.');}
+				} else {
+					console.log('failed guess: ' + currentGuess + ' != ' 
+						+ currentCatAnswers[checkY]);
+				}
+			}
+		}
+		
+		//test answers hint display
+		/*
+		for (checkHint = 0; checkHint < correctGuessesArray.length; checkHint++){
+			//if the value at the current slot is a correct answer:
+			if (correctGuessesArray[checkHint] > 0){
+				if (checkHint == 0){testSlot1.src="imgs/AnswerTest_yes.png";}
+				else if (checkHint == 1){testSlot2.src="imgs/AnswerTest_yes.png";}
+				else if (checkHint == 2){testSlot3.src="imgs/AnswerTest_yes.png";}
+				else {testSlot4.src="imgs/AnswerTest_yes.png";}
+			} 
+			//if the value at the current slot is not a correct answer:
+			else {
+				if (checkHint == 0){testSlot1.src="imgs/AnswerTest_no.png";}
+				else if (checkHint == 1){testSlot2.src="imgs/AnswerTest_no.png";}
+				else if (checkHint == 2){testSlot3.src="imgs/AnswerTest_no.png";}
+				else {testSlot4.src="imgs/AnswerTest_no.png";}
+			}
+		}
+		*/
+		
+		//Deliver results:
+		console.log('For category: "' + currentCatName 
+			+ '", with correct answers: ' + currentCatAnswers 
+			+ ', and player answers: ' + playerArtChoicesArray
+			+ ', and the correct guesses array: ' + correctGuessesArray
+			+ ', you found: ' + correctGuesses + '/4 correct paintings.');
+		//alert('You found ' + correctGuesses + '/4 correct paintings.');
+		document.getElementById("checkAnswersEn").textContent = 'You found ' + correctGuesses + '/4 correct images in the category ' ;
+		document.getElementById("checkAnswersGe").textContent = 'Du fandest ' + correctGuesses + '/4 richtige Bilder in der Kategorie ' ;
+		
+		if (correctGuesses < 4){
+			checkAnswers_text2.style.visibility = "visible";
+			checkAnswers_text2b.style.visibility = "hidden";
+			GetRewardsButton.style.visibility = "hidden";
+		} else {
+			checkAnswers_text2.style.visibility = "hidden";
+			checkAnswers_text2b.style.visibility = "visible";
+			GetRewardsButton.style.visibility = "visible";
+		}
+		
+		//Reset test array:
+		for (cleanUp = 0; cleanUp < 4; cleanUp++){
+			correctGuessesArray[cleanUp] = 0;
+		};
+	}
+
+	function NotAlreadyCorrectlyGuessed(currentGuess1){
+		//Loop#3 checks if already in correctGuessesArray
+		for (checkZ = 0; checkZ < 4; checkZ++){
+			if (currentGuess1 === correctGuessesArray[checkZ]){
+				console.log('found a duplicate correct guess: ' 
+					+ currentGuess1 + ' = ' + correctGuessesArray[checkZ]);
+				return false;
+			}
+		}
+		return true;
+	}
+	
+	
+	//add a function that resets the hint slots when the checkanswers box is closed
+	function ClearHints(){
+		for (checkHint2 = 0; checkHint2 < correctGuessesArray.length; checkHint2++){
+			if (checkHint2 == 0){testSlot1.src="imgs/AnswerTest_empty.png";}
+			else if (checkHint2 == 1){testSlot2.src="imgs/AnswerTest_empty.png";}
+			else if (checkHint2 == 2){testSlot3.src="imgs/AnswerTest_empty.png";}
+			else {testSlot4.src="imgs/AnswerTest_empty.png";}
+		}
+	}
+	
+
+// PART 9: GAME REWARD SYSTEM:
+/*
+	var KleeBitsArray_IDs = [];
+
+	KleeBitsArray_IDs[1] = {
+		ID : "KleeBits01"
+	};
+*/
+
+	var KleeBitsArray_Art = [];
+
+	KleeBitsArray_Art[0] = {
+		image01 : new Image(),
+		src : "imgs/KleeCat/KleeCatA_color.png",
+		ID : ""
+	};
+
+	KleeBitsArray_Art[1] = {
+		image01 : new Image(),
+		src : "imgs/KleeCat/KleeCatA_01.png",
+		ID : "KleeBits01"
+	};
+
+	KleeBitsArray_Art[2] = {
+		image01 : new Image(),
+		src : "imgs/KleeCat/KleeCatA_02.png",
+		ID : "KleeBits02"
+	};
+
+	KleeBitsArray_Art[3] = {
+		image01 : new Image(),
+		src : "imgs/KleeCat/KleeCatA_03.png",
+		ID : "KleeBits03"
+	};
+
+	KleeBitsArray_Art[4] = {
+		image01 : new Image(),
+		src : "imgs/KleeCat/KleeCatA_04.png",
+		ID : "KleeBits04"
+	};
+
+	KleeBitsArray_Art[5] = {
+		image01 : new Image(),
+		src : "imgs/KleeCat/KleeCatA_05.png",
+		ID : "KleeBits05"
+	};
+
+	KleeBitsArray_Art[6] = {
+		image01 : new Image(),
+		src : "imgs/KleeCat/KleeCatA_06.png",
+		ID : "KleeBits06"
+	};
+
+	KleeBitsArray_Art[7] = {
+		image01 : new Image(),
+		src : "imgs/KleeCat/KleeCatA_07.png",
+		ID : "KleeBits07"
+	};
+
+	KleeBitsArray_Art[8] = {
+		image01 : new Image(),
+		src : "imgs/KleeCat/KleeCatA_08.png",
+		ID : "KleeBits08"
+	};
+
+	KleeBitsArray_Art[9] = {
+		image01 : new Image(),
+		src : "imgs/KleeCat/KleeCatA_09.png",
+		ID : "KleeBits09"
+	};
+
+	KleeBitsArray_Art[10] = {
+		image01 : new Image(),
+		src : "imgs/KleeCat/KleeCatA_10.png",
+		ID : "KleeBits10"
+	};
+
+	KleeBitsArray_Art[11] = {
+		image01 : new Image(),
+		src : "imgs/KleeCat/KleeCatA_11.png",
+		ID : "KleeBits11"
+	};
+
+	KleeBitsArray_Art[12] = {
+		image01 : new Image(),
+		src : "imgs/KleeCat/KleeCatA_12.png",
+		ID : "KleeBits12"
+	};
+
+	KleeBitsArray_Art[13] = {
+		image01 : new Image(),
+		src : "imgs/KleeCat/KleeCatA_13.png",
+		ID : "KleeBits13"
+	};
+
+	KleeBitsArray_Art[14] = {
+		image01 : new Image(),
+		src : "imgs/KleeCat/KleeCatA_14.png",
+		ID : "KleeBits14"
+	};
+
+	KleeBitsArray_Art[15] = {
+		image01 : new Image(),
+		src : "imgs/KleeCat/KleeCatA_15.png",
+		ID : "KleeBits15"
+	};
+
+	KleeBitsArray_Art[16] = {
+		image01 : new Image(),
+		src : "imgs/KleeCat/KleeCatA_16.png",
+		ID : "KleeBits16"
+	};
+
+	KleeBitsArray_Art[17] = {
+		image01 : new Image(),
+		src : "imgs/KleeCat/KleeCatA_17.png",
+		ID : "KleeBits17"
+	};
+
+	KleeBitsArray_Art[18] = {
+		image01 : new Image(),
+		src : "imgs/KleeCat/KleeCatA_18.png",
+		ID : "KleeBits18"
+	};
+
+	KleeBitsArray_Art[19] = {
+		image01 : new Image(),
+		src : "imgs/KleeCat/KleeCatA_19.png",
+		ID : "KleeBits19"
+	};
+
+	KleeBitsArray_Art[20] = {
+		image01 : new Image(),
+		src : "imgs/KleeCat/KleeCatA_20.png",
+		ID : "KleeBits20"
+	};
+	
+	KleeBitsArray_Art[21] = {
+		image01 : new Image(),
+		src : "imgs/KleeCat/KleeCatA_21.png",
+		ID : "KleeBits21"
+	};
+
+	KleeBitsArray_Art[22] = {
+		image01 : new Image(),
+		src : "imgs/KleeCat/KleeCatA_22.png",
+		ID : "KleeBits22"
+	};
+
+	KleeBitsArray_Art[23] = {
+		image01 : new Image(),
+		src : "imgs/KleeCat/KleeCatA_23.png",
+		ID : "KleeBits23"
+	};
+
+	KleeBitsArray_Art[24] = {
+		image01 : new Image(),
+		src : "imgs/KleeCat/KleeCatA_24.png",
+		ID : "KleeBits24"
+	};
+
+	KleeBitsArray_Art[25] = {
+		image01 : new Image(),
+		src : "imgs/KleeCat/KleeCatA_25.png",
+		ID : "KleeBits25"
+	};
+	
+	var rewardNum = 0;
+	var rewardsPast = [0,0,0];
+
+	var KleeRewards1 =[2, 4, 6, 10, 12, 16, 22, 25];
+	var KleeRewards2 =[1, 3, 5, 7, 13, 15, 21, 23];
+	var KleeRewards3 =[8, 9, 11, 14, 17, 18, 19, 20, 24];
+
+	function addGameReward(){
+		rewardNum++;
+		for (rp = 0; rp < 3; rp++){
+			if (rewardsPast[rp] === 0){
+				console.log('rewardNum: ' + rewardNum 
+					+ ', rewardsPast: ' + rp + ' ' + rewardsPast[rp] + ', currentCatNum: ' + currentCatNum);
+				rewardsPast[rp] = currentCatNum;
+				gameReward();
+				return
+			} 
+			else if (rewardsPast[rp] === currentCatNum){
+				console.log('repeat attempt at reward: ' + rewardsPast[rp] + '=' + currentCatNum);
+				return;
+			} else {
+				console.log('This past reward already granted: ' + rp + ' ' + rewardsPast[rp]);
+			}
+		}
+	}
+
+	function gameReward(){
+		console.log('activated gameRewards system for rewardNum: ' + rewardNum);
+		
+		if (rewardNum === 0){
+			for (gr0 = 1; gr0 < KleeBitsArray_Art.length; gr0++){
+				document.getElementById(KleeBitsArray_Art[gr0].ID).src =  KleeBitsArray_Art[0].src;
+				// hide intro message, add keep going #1
+			}
+		}
+		if (rewardNum >= 1){
+			for (gr1 = 0; gr1 < KleeRewards1.length; gr1++){
+				document.getElementById(KleeBitsArray_Art[KleeRewards1[gr1]].ID).src 
+					= KleeBitsArray_Art[KleeRewards1[gr1]].src;
+					// hide intro message, add keep going #1
+			}
+		}
+		
+		if (rewardNum >= 2){
+			for (gr2 = 0; gr2 < KleeRewards2.length; gr2++){
+				document.getElementById(KleeBitsArray_Art[KleeRewards2[gr2]].ID).src 
+					= KleeBitsArray_Art[KleeRewards2[gr2]].src;
+					// hide intro message, add keep going #2
+			}
+		}
+		
+		if (rewardNum >= 3){
+			for (gr3 = 0; gr3 < KleeRewards3.length; gr3++){
+				document.getElementById(KleeBitsArray_Art[KleeRewards3[gr3]].ID).src 
+					= KleeBitsArray_Art[KleeRewards3[gr3]].src;
+					// hide intro message, add keep going #3
+			}
+		}
+			
+	}
+
+
+// PART 8: LANGUAGE SWITCHING: See <script> tags below
+/*
+	var currentLang = 'english';
+
+	function setLanguageEnglish(){
+		currentLang = 'english';
+		console.log('language button set to: ' + currentLang);
+	}
+	
+	function setLanguageGerman(){
+		currentLang = 'german';
+		console.log('language button set to: ' + currentLang);
+	}
+*/
+</script>
+
+<!-- language swap -->
+<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+<script>
+$('[lang]').hide(); // hide all lang attributes on start.
+$('[lang="ge"]').show(); // show just english text (you can change it)
+$('#lang-switch').change(function () { // put onchange event when user select option from select
+    var lang = $(this).val(); // decide which language to display using switch case. 
+    switch (lang) {
+        case 'en':
+            $('[lang]').hide();
+            $('[lang="en"]').show();
+        break;
+        case 'ge':
+            $('[lang]').hide();
+            $('[lang="ge"]').show();
+        break;
+        default:
+            $('[lang]').hide();
+            $('[lang="ge"]').show();
+        }
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function () {
+    $('#splashscreen').css('opacity', '1'); // doing this with jQuery for ease
+
+    // here are the basics, just like your existing code
+    $("#splashscreen").click(function () {
+        $("#splashscreen").fadeOut("slow"); // you could also use $(this).fadeOut('slow');
+    });
+});
+</script>
+
+
+</body>
+</html>
+
+
+<!--
+
+open firefox debug console: [ctrl] + [shift] + [k]
+
+OPEN QUESTIONS:
+1. Why all the warnings? Do I need to fix them? are any impacting performance?
+2. Should the jquery file be made local (instead of accessed through a web link)?
+3. Why am I unable to separate the CSS and JS work into their own files? Why does this cause the JS to stop working?
+
+4. Language swap: how to get no text to appear before text is correct (currently, both show, at least on homepage? avoid by starting with picture only?)
+
+5. SCORING: how to tell if a person won? How many choices are valid?
+Keep track of category.
+Do we need to track progress over multiple categories?
+Read from a JSON file to display options depending on category chosen?
+
+WORKING FUNCTIONALITY:
+1. Multiple "screen" progression: home, categories, art slots, code entry 
+(winscreen exists but not accessible)
+2. Pause Menu: resume, settings (for language selection), credits, new game
+3. Two Categories display: are randomized and will not display duplicates
+4. The four art slots are color coded for visual tracking, start empty but can be filled with code entry. Their content is stored in playerArtChoicesArray.
+5. There are currently spaces for 6 categories and 20 art images. 
+6. For code entry, all codes are 5 digits: 00001, 00002, 00003, ... 00010,  etc.
+
+All functioanlity works on the mobile web using Android Galaxy Note 10+ and iPone 8.
+
+DESIGN SUGGESTION: 
+As a game element, perhaps the "win" state is achived in a mastermind way:
+players know how many they have right, but not which ones.
+
+
+Splashscreen with j-query
+https://stackoverflow.com/questions/23230653/fade-out-splash-page
+background-color: #ffffff;
+    background-image: url(http://i.imgbox.com/Al4c3tZ5.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    position: fixed;
+    top: -60px; 
+    right: 0; 
+    bottom: 0; 
+    left: 0;
+    z-index: 99999;
+
+
+-->
+
+

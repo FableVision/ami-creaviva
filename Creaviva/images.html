@@ -1,0 +1,952 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Creaviva - Paul Klee Images</title>
+
+<style>
+
+.paintingGrid {
+  width: 640px;
+  height: 820px;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  perspective: 1000px;
+}
+
+.paintingGridHalf {
+  width: 640px;
+  height: 550px;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  perspective: 1000px;
+}
+
+.painting {
+  width: calc(25% - 10px);
+  height: calc(30% - 10px);
+  margin: 5px;
+  position: relative;
+  box-shadow: 1px 1px 1px rgba(0,0,0,.3);
+  
+  transform: scale(1);
+  transform-style: preserve-3d;
+  transition: transform .5s;
+}
+
+.paintingHalf {
+  width: calc(25% - 10px);
+  height: calc(50% - 10px);
+  margin: 5px;
+  position: relative;
+  box-shadow: 1px 1px 1px rgba(0,0,0,.3);
+  
+  transform: scale(1);
+  transform-style: preserve-3d;
+  transition: transform .5s;
+}
+
+#catHead{
+	position: relative;
+	top: 45px;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	font: 20px arial;
+	color: #222;
+	text-align: center;
+}
+
+#num,
+#name{
+	font: 14px arial;
+	color: #222;
+	text-align: center;
+}
+
+
+#year,
+#objectID{
+	font: 14px arial;
+	color: #595;
+	font-weight: bold;
+	text-align: center;
+}
+
+#objectIDmissing{
+	font: 14px arial;
+	color: #f22;
+	font-weight: bold;
+	text-align: center;
+}
+
+#toplinks{
+	font: 14px arial;
+	color: #222;
+}
+
+#toplinks_missing{
+	left: 10%;
+	transform: translate(20%);
+	font: 14px arial;
+	font-weight: bold;
+	color: #f22;
+}
+
+#duplicate{
+	font: 12px arial;
+	color: #222;
+	text-align: center;
+	font-weight: bold;
+}
+
+</style>
+</head>
+
+<body>
+<a name="top">
+<br><br>
+<center id="toplinks">
+<a href="#triangles">Triangles</a> (16) &nbsp; | &nbsp; 
+<a href="#feet">Feet</a> (13) &nbsp; | &nbsp;
+<a href="#arrows">Arrows</a> (4) &nbsp; | &nbsp;
+<a href="#letters">Letters</a> (2)  &nbsp; | &nbsp;
+<a href="#windows">Windows</a> (3)
+<br>
+
+<a href="#evening">Evening</a> (5) &nbsp; | &nbsp;
+<a href="#warm">Warm</a> (3) &nbsp; | &nbsp;
+<a href="#sun">Sun</a> (1) &nbsp; | &nbsp;
+<a href="#bluespots">Blue Spots</a> (3) &nbsp; | &nbsp;
+<a href="#animals">Animals</a>  &nbsp; | &nbsp;
+<a href="#cats">Cats</a>
+
+<br><br>
+23 total unique images (aside from the cats)
+<br>
+Note: #42 and #30 are in "Blue Spots"
+</center>
+
+<p id="toplinks_missing">
+5 Images missing ObjectIDs (these images are excluded from the game choices):
+<br>In Triangles: <a href="#triangles">#14</a>
+<br>In Letters: <a href="#letters">#34, #35</a>
+<br>In Evening: <a href="#evening">#39</a>
+<br>In Sun: <a href="#sun">#47</a>
+<br>In Animals: <a href="#animals">#52</a>
+</p>
+
+<p id="catHead"><a name="triangles"><br></a></p>
+<p id="catHead"><a href="#top">/\</a> Triangles </p>
+<br>
+
+<section class="paintingGrid">
+<div class="painting">
+    <img src="imgs/Triangles/233.jpg" alt="" width=128>
+<br>
+<a id="num">#1 - 233</a>
+<br><a id="name">name: &quot;Stilleben am  Schalttag&quot;</a>
+<br>
+<a id="year">year: 1940</a>
+<br> <a id="objectID">objectID: 233</a>
+</div>
+<div class="painting">
+    <img src="imgs/Triangles/289.jpg" alt="" width=128>
+<br>
+<a id="num">#2 - 289</a>
+<br> <a id="name">name: &quot;Glas-Fassade&quot;</a><br>
+<a id="year">year: 1940</a>
+<br> <a id="objectID">objectID: 288</a>
+</div>
+<div class="painting">
+    <img src="imgs/Triangles/2189.jpg" alt="" width=128>
+<br>
+<a id="num">#3 - 2189</a>
+<br> <a id="name">name: &quot;Abfahrt der Schiffe&quot;</a>
+<br>
+<a id="year">year: 1927</a>
+<br> <a id="objectID">objectID: 140.1</a>
+</div>
+<div class="painting">
+    <img src="imgs/Triangles/2728.jpg" alt="" width=128>
+<br>
+<a id="num">#4 - 2728</a>
+<br> <a id="name">name: &quot;Assyrisches Spiel&quot;</a>
+<br>
+<a id="year">year: 1923</a>
+<br> <a id="objectID">objectID: 79</a>
+</div>
+<div class="painting">
+    <img src="imgs/Triangles/3388.jpg" alt="" width=128>
+<br>
+<a id="num">#5 - 3388</a>
+<br> <a id="name">name:
+&quot;Pÿramide&quot;</a>
+<br>
+<a id="year">year: 1930</a>
+<br> <a id="objectID">objectID: 138</a>
+</div>
+<div class="painting">
+    <img src="imgs/Triangles/4054.jpg" alt="" width=128>
+<br>
+<a id="num">#6 - 4054</a>
+<br> <a id="name">name: &quot;Krieg in der Höhe&quot;</a>
+<br>
+<a id="year">year: 1914</a>
+<br> <a id="objectID">objectID: 173</a>
+</div>
+<div class="painting">
+    <img src="imgs/Triangles/5158.jpg" alt="" width=128>
+<br>
+<a id="num">#7 - 5158</a>
+<br> <a id="name">name: &quot;Zimmerperspective mit  Einwohnern&quot;</a>
+<br>
+<a id="year">year: 1921</a>
+<br> <a id="objectID">objectID: 24</a>
+</div>
+<div class="painting">
+    <img src="imgs/Triangles/7801.jpg" alt="" width=128>
+<br>
+<a id="num">#8 - 7801</a>
+<br> <a id="name">name: &quot;Farbenwinkel&quot;</a>
+<br>
+<a id="year">year: 1917</a>
+<br> <a id="objectID">objectID: 50</a>
+</div>
+<div class="painting">
+    <img src="imgs/Triangles/7826.jpg" alt="" width=128>
+<br>
+<a id="num">#9 - 7826</a>
+<br> <a id="name">name: &quot;Felsenlandschaft&quot;</a>
+<br>
+<a id="year">year:1919</a>
+<br> <a id="objectID">objectID: 155</a>
+</div>
+<div class="painting">
+    <img src="imgs/Triangles/7832.jpg" alt="" width=128>
+<br>
+<a id="num">#10 - 7832</a>
+<br> <a id="name">name: &quot;mit der sinkenden  Sonne&quot;</a>
+<br>
+<a id="year">year: 1919</a>
+<br> <a id="objectID">objectID: 247</a>
+</div>
+<div class="painting">
+    <img src="imgs/Triangles/8207.jpg" alt="" width=128>
+<br>
+<a id="num">#11 - 8207</a>
+<br> <a id="name">name: &quot;geöffnet&quot;</a>
+<br>
+<a id="year">year: 1933</a>
+<br> <a id="objectID">objectID: 306</a>
+</div>
+<div class="painting">
+    <img src="imgs/Triangles/8305.jpg" alt="" width=128>
+<br>
+<a id="num">#12 - 8305</a>
+<br> <a id="name">name: &quot;Caligula&quot;</a>
+<br>
+<a id="year">year: 1936</a>
+<br> <a id="objectID">objectID: 4</a>
+</div>
+<div class="painting">
+    <img src="imgs/Triangles/9312.jpg" alt="" width=128>
+<br>
+<a id="num">#13 - 9312</a>
+<br> <a id="name">name: &quot;Städtebau mit grünem  Kirchturm&quot;</a>
+<br>
+<a id="year">year: 1919</a>
+<br> <a id="objectID">objectID: 191</a>
+</div>
+<div class="painting">
+    <img src="imgs/Triangles/9585.jpg" alt="" width=128>
+<br>
+<a id="num">#14 - 9585</a>
+<br> <a id="name">name: &quot;Ohne Titel  (Schwarz-weiss)&quot;</a>
+<br>
+<a id="year">year: 1938</a>
+<br> 
+<a id="objectIDmissing">objectID: ??</a>
+</div>
+<div class="painting">
+    <img src="imgs/Triangles/18790.jpg" alt="" width=128>
+<br>
+<a id="num">#15 - 18790</a>
+<br> <a id="name">name: &quot;Der Tod für die Idee&quot;</a>
+<br>
+<a id="year">year: 1915</a>
+<br> <a id="objectID">objectID: 1</a>
+</div>
+<div class="painting">
+    <img src="imgs/Triangles/55835_W.jpg" alt="" width=128>
+<br>
+<a id="num">#16 - 55835_W</a>
+<br> <a id="name">name: &quot;Einst dem Grau der  Nacht enttaucht&quot;</a>
+<br>
+<a id="year">year: 1918</a>
+<br> <a id="objectID">objectID: 17</a>
+</div>
+</section>
+
+
+
+<br><br><br><br><br><br><br><br>
+<p id="catHead"><a name="feet"><br></a></p>
+<p id="catHead"><a href="#top">/\</a> Feet </p>
+<br>
+<section class="paintingGrid">
+<div class="painting">
+    <img src="imgs/Feet/739.jpg" alt="" width=128>
+<br><a id="num">#17 - 739</a>
+<br> <a id="name">name: "Fräulein vom Sport"</a>
+<br><a id="year">year: 1938</a>
+<br> <a id="objectID">objectID: 29</a>
+</div>
+<div class="painting">
+    <img src="imgs/Feet/1006.jpg" alt="" width=128>
+<br><a id="num">#18 - 1006</a>
+<br> <a id="name">name: "Büsser"</a>
+<br><a id="year">year: 1935</a>
+<br> <a id="objectID">objectID: 143</a>
+</div>
+<div class="painting">
+    <img src="imgs/Feet/1294.jpg" alt="" width=128>
+<br><a id="num">#19 - 1294</a>
+<br> <a id="name">name: "Cunctator"</a>
+<br><a id="year">year: 1938</a>
+<br> <a id="objectID">objectID: 61</a>
+</div>
+<div class="painting">
+    <img src="imgs/Feet/2825.jpg" alt="" width=128>
+<br><a id="num">#20 - 2825</a>
+<br> <a id="name">name: "Fama"</a>
+<br><a id="year">year: 1939</a>
+<br> <a id="objectID">objectID: 502</a>
+</div>
+<div class="painting">
+    <img src="imgs/Feet/4051.jpg" alt="" width=128>
+<br><a id="num">#21 - 4051</a>
+<br> <a id="name">name: "Der Deutsche im Geräuf"</a>
+<br><a id="year">year: 1914</a>
+<br> <a id="objectID">objectID: 167</a>
+</div>
+<div class="painting">
+    <img src="imgs/Feet/7207.jpg" alt="" width=128>
+<br><a id="num">#22 - 7207</a>
+<br> <a id="name">name: "Maskentreiben"</a>
+<br><a id="year">year: 1933</a>
+<br> <a id="objectID">objectID: 43</a>
+</div>
+<div class="painting">
+    <img src="imgs/Feet/7237.jpg" alt="" width=128>
+<br><a id="num">#23 - 7237</a>
+<br> <a id="name">name: "Anklage auf der Strasse"</a>
+<br><a id="year">year: 1933</a>
+<br> <a id="objectID">objectID: 85</a>
+</div>
+<div class="painting">
+    <img src="imgs/Feet/7262.jpg" alt="" width=128>
+<br><a id="num">#24 - 7262</a>
+<br> <a id="name">name: "Menschenjagd"</a>
+<br><a id="year">year: 1933</a>
+<br> <a id="objectID">objectID: 115</a>
+</div>
+<div class="painting">
+    <img src="imgs/Feet/8644.jpg" alt="" width=128>
+<br><a id="num">#25 - 8644</a>
+<br> <a id="name">name: "Training"</a>
+<br><a id="year">year: 1939</a>
+<br> <a id="objectID">objectID: 769</a>
+</div>
+<div class="painting">
+    <img src="imgs/Feet/8654.jpg" alt="" width=128>
+<br><a id="num">#26 - 8654</a>
+<br> <a id="name">name: "tolle Köchin"</a>
+<br><a id="year">year: 1939</a>
+<br> <a id="objectID">objectID: 797</a>
+</div>
+<div class="painting">
+    <img src="imgs/Feet/18790.jpg" alt="" width=128>
+<br><a id="num">18790</a>
+<br> 
+<br><a id="duplicate"><b>[ALSO IN TRIANGLES: #15]</b></a>
+</div>
+<div class="painting">
+    <img src="imgs/Feet/19868.jpg" alt="" width=128>
+<br><a id="num">#27 - 19868</a>
+<br> <a id="name">name: "Jungfrau"</a>
+<br><a id="year">year: 1903</a>
+<br> <a id="objectID">objectID: 2</a>
+</div>
+<div class="painting">
+    <img src="imgs/Feet/21218.jpg" alt="" width=128>
+<br><a id="num">#28 - 21218</a>
+<br> <a id="name">name: "ein Mann versinkt vor der Krone"</a>
+<br><a id="year">year: 1904</a>
+<br> <a id="objectID">objectID: 11</a>
+</div>
+<div class="painting">
+    <img src="imgs/Feet/67884.jpg" alt="" width=128>
+<br><a id="num">#29 - 67884</a>
+<br> <a id="name">name: "Windspielartiges Tier"</a>
+<br><a id="year">year: 1902</a>
+<br> <a id="objectID">objectID: 1</a>
+</div>
+</section>
+
+
+
+<br><br><br><br><br><br><br><br>
+<p id="catHead"><a name="arrows"><br></a></p>
+<p id="catHead"><a href="#top">/\</a> Arrows </p>
+<br>
+<section class="paintingGridHalf">
+<div class="paintingHalf">
+    <img src="imgs/Arrows/2189.jpg" alt="" width=128>
+<br><a id="num">2189</a>
+<br> 
+<br><a id="duplicate"><b>[ALSO IN TRIANGLES: #3]</b></a>
+</div>
+<div class="paintingHalf">
+    <img src="imgs/Arrows/5158.jpg" alt="" width=128>
+<br><a id="num">5158</a>
+<br> 
+<br><a id="duplicate"><b>[ALSO IN TRIANGLES: #7]</b></a>
+</div>
+<div class="paintingHalf">
+    <img src="imgs/Arrows/7262.jpg" alt="" width=128>
+<br><a id="num">7262</a>
+<br> 
+<br><a id="duplicate"><b>[ALSO IN FEET: #24]</b></a>
+</div>
+<div class="paintingHalf">
+    <img src="imgs/Arrows/7829.jpg" alt="" width=128>
+<br><a id="num">#31 - 7829</a>
+<br> <a id="name">name: "Katastrophe"</a>
+<br><a id="year">year: 1919</a>
+<br> <a id="objectID">objectID: 170</a>
+</div>
+<div class="paintingHalf">
+    <img src="imgs/Arrows/7832.jpg" alt="" width=128>
+<br><a id="num">7832</a>
+<br> 
+<br><a id="duplicate"><b>[ALSO IN TRIANGLES: #10]</b></a>
+</div>
+<div class="paintingHalf">
+    <img src="imgs/Arrows/8312.jpg" alt="" width=128>
+<br><a id="num">#32 - 8312</a>
+<br> 
+<a id="name">name: &quot;labiler Wegweiser&quot;</a>
+<br>
+<a id="year">year: 1937</a>
+<br> 
+<a id="objectID">objectID: 45</a>
+</div>
+<div class="paintingHalf">
+    <img src="imgs/Arrows/8800.jpg" alt="" width=128>
+<br><a id="num">#33 - 8800</a>
+<br> 
+<a id="name">name: &quot;eins der schönsten  Gleichnisse&quot;</a>
+<br>
+<a id="year">year: 1933</a>
+<br> 
+<a id="objectID">objectID: 61</a>
+</div>
+</section>
+
+
+
+
+<br><br><br>
+<p id="catHead"><a name="letters"><br></a></p>
+<p id="catHead"><a href="#top">/\</a> Letters (currently not used in game, due to only 3 usable images)</p>
+<br>
+<section class="paintingGridHalf">
+<div class="paintingHalf">
+    <img src="imgs/Letters/8800.jpg" alt="" width=128>
+<br><a id="num">8800</a>
+<br> 
+<br><a id="duplicate"><b>[ALSO IN ARROWS: #33]</b></a>
+</div>
+<div class="paintingHalf">
+    <img src="imgs/Letters/9443.jpg" alt="" width=128>
+<br><a id="num">#34 - 9443</a>
+<br> 
+<a id="name">name: &quot;Meine Bude&quot;</a>
+<br>
+<a id="year">year: 1896</a>
+<br> 
+<a id="objectIDmissing">objectID: ??</a>
+</div>
+<div class="paintingHalf">
+    <img src="imgs/Letters/9558.jpg" alt="" width=128>
+<br><a id="num">#35 - 9558</a>
+<br> 
+<a id="name">name: &quot;Ohne Titel&quot;</a>
+<br>
+<a id="year">year: 1902</a>
+<br> 
+<a id="objectIDmissing">objectID: ??</a>
+</div>
+<div class="paintingHalf">
+    <img src="imgs/Letters/19868.jpg" alt="" width=128>
+<br><a id="num">19868</a>
+<br> 
+<br><a id="duplicate"><b>[ALSO IN FEET #27]</b></a>
+</div>
+<div class="paintingHalf">
+    <img src="imgs/Letters/55835_W.jpg" alt="" width=128>
+<br><a id="num">55835_W</a>
+<br> 
+<br><a id="duplicate"><b>[ALSO IN TRIANGLES #16]</b></a>
+</div>
+</section>
+
+
+
+
+<br><br><br>
+<p id="catHead"><a name="windows"><br></a></p>
+<p id="catHead"><a href="#top">/\</a> Windows </p>
+<br>
+<section class="paintingGridHalf">
+<div class="paintingHalf">
+    <img src="imgs/Windows/289.jpg" alt="" width=128>
+<br><a id="num">289</a>
+<br> 
+<br><a id="duplicate"><b>[ALSO IN TRIANGLES #2]</b></a>
+</div>
+<div class="paintingHalf">
+    <img src="imgs/Windows/5158.jpg" alt="" width=128>
+<br><a id="num">5158</a>
+<br> 
+<br><a id="duplicate"><b>[ALSO IN TRIANGLES: #7]</b></a>
+</div>
+<div class="paintingHalf">
+    <img src="imgs/Windows/7745.jpg" alt="" width=128>
+<br><a id="num">#36 - 7745</a>
+<br> 
+<a id="name">name: &quot;Vorstadt&quot;</a>
+<br>
+<a id="year">year: 1913</a>
+<br> 
+<a id="objectID">objectID: 44</a>
+</div>
+<div class="paintingHalf">
+    <img src="imgs/Windows/7832.jpg" alt="" width=128>
+<br><a id="num">7832</a>
+<br> 
+<br><a id="duplicate"><b>[ALSO IN TRIANGLES: #10]</b></a>
+</div>
+<div class="paintingHalf">
+    <img src="imgs/Windows/8118.jpg" alt="" width=128>
+<br><a id="num">#37 - 8118</a>
+<br> 
+<a id="name">name: &quot;durch ein Fenster&quot;</a>
+<br>
+<a id="year">year: 1932</a>
+<br> 
+<a id="objectID">objectID: 184</a>
+</div>
+<div class="paintingHalf">
+    <img src="imgs/Windows/9443.jpg" alt="" width=128>
+<br><a id="num">9443</a>
+<br> 
+<br><a id="duplicate"><b>[ALSO IN LETTERS #34]</b></a>
+</div>
+<div class="paintingHalf">
+    <img src="imgs/Windows/14587.jpg" alt="" width=128>
+<br>
+<a id="num">#38 - 14587(image) or 896(text ref)?</a>, 
+<br> 
+<a id="name">name: &quot;das Haus im Süden&quot;</a>
+<br>
+<a id="year">year: 1927</a>
+<br> 
+<a id="objectID">objectID: 223</a>
+</div>
+<div class="paintingHalf">
+    <img src="imgs/Windows/18790.jpg" alt="" width=128>
+<br><a id="num">18790</a>
+<br> 
+<br><a id="duplicate"><b>[ALSO IN TRIANGLES: #15]</b></a>
+</div>
+</section>
+
+
+
+<br><br><br>
+<p id="catHead"><a name="evening"><br></a></p>
+<p id="catHead"><a href="#top">/\</a> Evening </p>
+<br>
+<section class="paintingGrid">
+<div class="painting">
+    <img src="imgs/Evening/2189.jpg" alt="" width=128>
+<br>
+<a id="num">2189</a>
+<br>
+<br><a id="duplicate"><b>[ALSO IN TRIANGLES: #3]</b></a>
+</div>
+<div class="painting">
+    <img src="imgs/Evening/2658.jpg" alt="" width=128>
+<br><a id="num">#39 - 2658</a>
+<br> 
+<a id="name">name: &quot;Ohne Titel&quot;</a>
+<br>
+<a id="year">year: 1900</a>
+<br> 
+<a id="objectIDmissing">objectID: ??</a>
+</div>
+<div class="painting">
+    <img src="imgs/Evening/2728.jpg" alt="" width=128>
+<br><a id="num">2728</a>
+<br>
+<br><a id="duplicate"><b>[ALSO IN TRIANGLES: #4]</b></a>
+</div>
+<div class="painting">
+    <img src="imgs/Evening/3388.jpg" alt="" width=128>
+<br><a id="num">3388</a>
+<br>
+<br><a id="duplicate"><b>[ALSO IN TRIANGLES #5]</b></a>
+</div>
+<div class="painting">
+    <img src="imgs/Evening/4083.jpg" alt="" width=128>
+<br><a id="num">#40 - 4083</a>
+<br> 
+<a id="name">name: &quot;vor den Toren v.  Kairuan&quot;</a>
+<br>
+<a id="year">year: 1914</a>
+<br> 
+<a id="objectID">objectID: 216</a>
+</div>
+<div class="painting">
+    <img src="imgs/Evening/6786.jpg" alt="" width=128>
+<br><a id="num">#41 - 6786</a>
+<br> 
+<a id="name">name: &quot;Schwungkräfte&quot;</a>
+<br>
+<a id="year">year: 1929</a>
+<br> 
+<a id="objectID">objectID: 267</a>
+</div>
+<div class="painting">
+    <img src="imgs/Evening/7745.jpg" alt="" width=128>
+<br><a id="num">7745</a>
+<br>
+<br><a id="duplicate"><b>[ALSO IN WINDOWS #36]</b></a>
+</div>
+<div class="painting">
+    <img src="imgs/Evening/7887.jpg" alt="" width=128>
+<br><a id="num">#43 - 7887</a>
+<br> 
+<a id="name">name: &quot;Städtebild&quot;</a>
+<br>
+<a id="year">year: 1923</a>
+<br> 
+<a id="objectID">objectID: 90</a>
+</div>
+<div class="painting">
+    <img src="imgs/Evening/8118.jpg" alt="" width=128>
+<br><a id="num">8118</a>
+<br>
+<br><a id="duplicate"><b>[ALSO IN WINDOWS #37]</b></a>
+</div>
+<div class="painting">
+    <img src="imgs/Evening/8207.jpg" alt="" width=128>
+<br><a id="num">8207</a>
+<br>
+<br><a id="duplicate"><b>[ALSO IN TRIANGLES #11]</b></a>
+</div>
+<div class="painting">
+    <img src="imgs/Evening/9443.jpg" alt="" width=128>
+<br><a id="num">9433</a>
+<br>
+<br><a id="duplicate"><b>[ALSO IN LETTERS #34]</b></a>
+</div>
+</section>
+
+
+
+
+<br><br><br><br>
+<p id="catHead"><a name="warm"><br></a></p>
+<p id="catHead"><a href="#top">/\</a> Warm </p>
+<br>
+<section class="paintingGridHalf">
+<div class="paintingHalf">
+    <img src="imgs/Warm/739.jpg" alt="" width=128>
+<br><a id="num">739</a>
+<br><a id="duplicate"><b>[ALSO IN FEET #17]</b></a>
+</div>
+<div class="paintingHalf">
+    <img src="imgs/Warm/4234.jpg" alt="" width=128>
+<br><a id="num">#44 - 4234</a>
+<br> 
+<a id="name">name: &quot;Steinbruch&quot;</a>
+<br>
+<a id="year">year: 1915</a>
+<br> 
+<a id="objectID">objectID: 213</a>
+</div>
+<div class="paintingHalf">
+    <img src="imgs/Warm/7829.jpg" alt="" width=128>
+<br><a id="num">7829</a>
+<br>
+<br><a id="duplicate"><b>[ALSO IN ARROWS #31]</b></a>
+</div>
+<div class="paintingHalf">
+    <img src="imgs/Warm/8118.jpg" alt="" width=128>
+<br><a id="num">8118</a>
+<br>
+<br><a id="duplicate"><b>[ALSO IN WINDOWS #37]</b></a>
+</div>
+<div class="paintingHalf">
+    <img src="imgs/Warm/8228.jpg" alt="" width=128>
+<br><a id="num">#45 - 8228</a>
+<br> 
+<a id="name">name: &quot;von der Liste  gestrichen&quot;</a>
+<br>
+<a id="year">year: 1933</a>
+<br> 
+<a id="objectID">objectID: 424</a>
+</div>
+<div class="paintingHalf">
+    <img src="imgs/Warm/8509.jpg" alt="" width=128>
+<br><a id="num">#46 - 8509</a>
+<br> 
+<a id="name">name: &quot;Brand-Maske&quot;</a>
+<br>
+<a id="year">year: 1939</a>
+<br> 
+<a id="objectID">objectID: 274</a>
+</div>
+<div class="paintingHalf">
+    <img src="imgs/Warm/14587.jpg" alt="" width=128>
+<br><a id="num">14587(image) or 896(text ref)?</a>
+<br>
+<br><a id="duplicate"><b>[ALSO IN WINDOWS #38]</b></a>
+</div>
+</section>
+
+
+
+
+<br><br><br>
+<p id="catHead"><a name="sun"><br></a></p>
+<p id="catHead"><a href="#top">/\</a> Sun </p>
+<br>
+<section class="paintingGridHalf">
+<div class="paintingHalf">
+    <img src="imgs/Sun/6786.jpg" alt="" width=128>
+<br><a id="num">6786</a>
+<br>
+<br><a id="duplicate"><b>[ALSO IN EVENING: #41]</b></a>
+</div>
+<div class="paintingHalf">
+    <img src="imgs/Sun/7832.jpg" alt="" width=128>
+<br><a id="num">7832</a>
+<br>
+<br><a id="duplicate"><b>[ALSO IN TRIANGLES: #10]</b></a>
+</div>
+<div class="paintingHalf">
+    <img src="imgs/Sun/8207.jpg" alt="" width=128>
+<br><a id="num">8207</a>
+<br>
+<br><a id="duplicate"><b>[ALSO IN TRIANGLES #11]</b></a>
+</div>
+<div class="paintingHalf">
+    <img src="imgs/Sun/8800.jpg" alt="" width=128>
+<br><a id="num">8800</a>
+<br>
+<br><a id="duplicate"><b>[ALSO IN ARROWS: #33]</b></a>
+</div>
+<div class="paintingHalf">
+    <img src="imgs/Sun/9229.jpg" alt="" width=128>
+<br><a id="num">#47 - 9229</a>
+<br> 
+<a id="name">name: &quot;Ohne Titel&quot;</a>
+<br>
+<a id="year">year: 1896</a>
+<br>
+<a id="objectIDmissing">objectID: ??</a>
+</div>
+</section>
+
+
+
+
+<br><br><br>
+<p id="catHead"><a name="bluespots"><br></a></p>
+<p id="catHead"><a href="#top">/\</a> Blue Spots </p>
+<br>
+<section class="paintingGridHalf">
+<div class="paintingHalf">
+    <img src="imgs/BlueSpots/4079.jpg" alt="" width=128>
+<br><a id="num">#48 - 4079</a>
+<br> 
+<a id="name">name: &quot;im Stil v Kairouan,  ins gemässigte übertragen&quot;</a>
+<br>
+<a id="year">year: 1914</a>
+<br> 
+<a id="objectID">objectID: 211</a>
+</div>
+<div class="paintingHalf">
+    <img src="imgs/BlueSpots/7745.jpg" alt="" width=128>
+<br><a id="num">7745</a>
+<br>
+<br><a id="duplicate"><b>[ALSO IN WINDOWS: #36]</b></a>
+</div>
+<div class="paintingHalf">
+    <img src="imgs/BlueSpots/7751.jpg" alt="" width=128>
+<br>
+<a id="num">#30 - 7751</a>
+<br> 
+<a id="name">name: &quot;Schosshaldenholz&quot;</a>
+<br>
+<a id="year">year: 1913</a>
+<br> 
+<a id="objectID">objectID: 198</a>
+</div>
+<div class="paintingHalf">
+    <img src="imgs/BlueSpots/7771.jpg" alt="" width=128>
+<br><a id="num">#42 - 7771</a>
+<br> 
+<a id="name">name: &quot;vertrauter Raum&quot;</a>
+<br>
+<a id="year">year: 1915</a>
+<br> 
+<a id="objectID">objectID: 56</a>
+</div>
+<div class="paintingHalf">
+    <img src="imgs/BlueSpots/8118.jpg" alt="" width=128>
+<br><a id="num">8118</a>
+<br>
+<br><a id="duplicate"><b>[ALSO IN WINDOWS #37]</b></a>
+</div>
+<div class="paintingHalf">
+    <img src="imgs/BlueSpots/8654.jpg" alt="" width=128>
+<br><a id="num">8654</a>
+<br>
+<br><a id="duplicate"><b>[ALSO IN FEET: #26]</b></a>
+</div>
+</section>
+
+
+<br><br><br>
+<p id="catHead"><a name="animals"><br></a></p>
+<p id="catHead"><a href="#top">/\</a> Animals (replaces &quot;Letters&quot; category) </p>
+<br>
+<section class="paintingGridHalf">
+<div class="paintingHalf">
+    <img src="imgs/Animals/319.jpg" alt="" width=128>
+<br>
+<a id="num">#49 - 319</a>
+<br> 
+<a id="name">name: &quot;die  Schlangengöttin und ihr Feind&quot;</a>
+<br>
+<a id="year">year: 1940</a>
+<br> 
+<a id="objectID">objectID: 317</a>
+</div>
+<div class="paintingHalf">
+    <img src="imgs/Animals/4083.jpg" alt="" width=128>
+<br><a id="num">4083</a>
+<br>
+<br><a id="duplicate"><b>[ALSO IN EVENING: #40]</b></a>
+</div>
+<div class="paintingHalf">
+    <img src="imgs/Animals/4628.jpg" alt="" width=128>
+<br>
+<a id="num">#50 - 4628</a>
+<br> 
+<a id="name">name: &quot;Zwei  Langhalshunde&quot;</a>
+<br>
+<a id="year">year: 1907</a>
+<br> 
+<a id="objectID">objectID: 17</a>
+</div>
+<div class="paintingHalf">
+    <img src="imgs/Animals/8732.jpg" alt="" width=128>
+<br>
+<a id="num">#51 - 8732</a>
+<br> 
+<a id="name">name: &quot;Bastard&quot;</a>
+<br>
+<a id="year">year: 1939</a>
+<br> 
+<a id="objectID">objectID: 1132</a>
+</div>
+<div class="paintingHalf">
+    <img src="imgs/Animals/8800.jpg" alt="" width=128>
+<br><a id="num">8800</a>
+<br>
+<br><a id="duplicate"><b>[ALSO IN ARROWS: #33]</b></a>
+</div>
+<div class="paintingHalf">
+    <img src="imgs/Animals/9161.jpg" alt="" width=128>
+<br>
+<a id="num">#52 - 9261</a>
+<br> 
+<a id="name">name: &quot;Dorndreher  od. Neuntöter&quot;</a>
+<br>
+<a id="year">year: 1894</a>
+<br>
+<a id="objectIDmissing">objectID: ??</a>
+</div>
+<div class="paintingHalf">
+    <img src="imgs/Animals/19868.jpg" alt="" width=128>
+<br><a id="num">19868</a>
+<br>
+<br><a id="duplicate"><b>[ALSO IN FEET #27]</b></a>
+</div>
+<div class="paintingHalf">
+    <img src="imgs/Animals/67884.jpg" alt="" width=128>
+<br><a id="num">67884</a>
+<br>
+<br><a id="duplicate"><b>[ALSO IN FEET #29]</b></a>
+</div>
+</section>
+
+
+
+<br><br><br>
+<p id="catHead"><a name="cats"><br></a></p>
+<p id="catHead"><a href="#top">/\</a> Cats (where will we use these? ) </p>
+<br>
+<section class="paintingGridHalf">
+<div class="paintingHalf">
+    <img src="imgs/Cats/29.jpg" alt="" width=128>
+<br><a id="num">29</a>
+</div>
+<div class="paintingHalf">
+    <img src="imgs/Cats/2462.jpg" alt="" width=128>
+<br><a id="num">2462</a>
+</div>
+<div class="paintingHalf">
+    <img src="imgs/Cats/2961.jpg" alt="" width=128>
+<br><a id="num">2961</a>
+</div>
+<div class="paintingHalf">
+    <img src="imgs/Cats/8772.jpg" alt="" width=128>
+<br><a id="num">8772</a>
+</div>
+<div class="paintingHalf">
+    <img src="imgs/Cats/8879.jpg" alt="" width=128>
+<br><a id="num">8879</a>
+</div>
+<div class="paintingHalf">
+    <img src="imgs/Cats/31926.jpg" alt="" width=128>
+<br><a id="num">31926</a>
+</div>
+<div class="paintingHalf">
+    <img src="imgs/Cats/32174.jpg" alt="" width=128>
+<br><a id="num">32174</a>
+
+</div>
+</section>
+
+<br><br><br><br><br><br><br><br><br><br><br><br>
+
+</body>
+</html>
